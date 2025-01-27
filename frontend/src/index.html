@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.index.css">
+    <title>Cadastro de convidados</title>
+
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div><!-- Cor de fundo da navbar -->
+            </div>
+        </nav>
+    </header>
+
+    <main id="conteudo-pagina" class="center-align">
+
+        <h1 id="guest_header"></h1>
+        <div class="center-align">
+            <div class="table-responsive">
+                <form action="/users" method="post">
+                    <label for="name">Nome do Convidado</label>
+                    <input type="text" id="name" name="name" placeholder="Digite o seu nome completo" required>
+
+                    <h1 className="">Quantos acompanhantes <span class="maiores">maiores</span> de 5 anos?</h1>
+
+                    <div class="contador">
+                        <button type="button" id="btnMenos" class="estiloBotaoMenos"><span>-</span></button>
+
+                        <input type="number" id="acompanhantesMaiores" class="acompanhantes" name="acompanhantes" value="0"
+                            min="0" readonly>
+
+                        <button type="button" id="btnMais" class="estiloBotaoMais"><span>+</span></button>
+                    </div>
+
+                    <h1 className="">Quantos acompanhantes <span class="menores">menores</span> de 5 anos?</h1>
+                    <!--
+                    <div class="contador">
+                        <button type="button" id="btnMenos2" class="estiloBotaoMenos"><span>-</span></button>
+
+                        <input type="number" id="acompanhantesMenores" class="acompanhantes" name="acompanhantes" value="0"
+                            min="0" readonly>
+
+                        <button type="button" id="btnMais2" class="estiloBotaoMais"><span>+</span></button>
+                    </div>
+                    -->
+
+                    <button type="submit">Confirmar</button>
+                </form>
+
+                <div className="styles.localizacao">
+                    <h1>Para saber a data e local, verifique o convite que você recebeu pelo WhatsApp.</h1>
+                </div>
+
+                <div id="modal" class="modal hidden">
+                    <div class="modal-content">
+                        <span id="closeModal" class="close">&times;</span>
+                        <p id="modalMessage"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer></footer>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".contador").forEach((contador) => {
+                const btnMais = contador.querySelector(".estiloBotaoMais");
+                const btnMenos = contador.querySelector(".estiloBotaoMenos");
+                const inputAcompanhantes = contador.querySelector(".acompanhantes");
+
+                btnMais.addEventListener("click", () => {
+                    const valorAtual = parseInt(inputAcompanhantes.value, 10);
+                    if (valorAtual < 3) {
+                        inputAcompanhantes.value = valorAtual + 1;
+                    }
+                });
+
+                btnMenos.addEventListener("click", () => {
+                    const valorAtual = parseInt(inputAcompanhantes.value, 10);
+                    if (valorAtual > 0) {
+                        inputAcompanhantes.value = valorAtual - 1;
+                    }
+                });
+            });
+
+        });
+
+        document.getElementById("name").addEventListener("input", function() {
+            this.value = this.value.toUpperCase();
+        });
+        
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.querySelector("form");
+            const modal = document.getElementById("modal");
+            const closeModal = document.getElementById("closeModal");
+            const modalMessage = document.getElementById("modalMessage");
+
+            // Função para mostrar o modal
+            const showModal = (message) => {
+                modalMessage.textContent = message; // Define a mensagem
+                modal.classList.remove("hidden");  // Exibe o modal
+            };
+
+            // Fecha o modal ao clicar no "X"
+            closeModal.addEventListener("click", () => {
+                modal.classList.add("hidden");
+            });
+
+            // Fecha o modal ao clicar fora do conteúdo
+            modal.addEventListener("click", (event) => {
+                if (event.target === modal) {
+                    modal.classList.add("hidden");
+                }
+            });
+
+            form.addEventListener("submit", async (event) => {
+                event.preventDefault(); // Impede o envio padrão do formulário
+
+                const nome = document.getElementById("name").value.toUpperCase();
+                const acompanhantesMaiores = parseInt(
+                    document.getElementById("acompanhantesMaiores").value,
+                    10
+                );
+
+                // Envia os dados para o backend
+                try {
+                    const response = await fetch("/users", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ name: nome, rg: acompanhantesMaiores }),
+                    });
+
+                    const result = await response.json();
+                    showModal(result.message || "Cadastro realizado com sucesso!"); // Exibe o modal
+
+                } catch (err) {
+                    console.error("Erro ao salvar os dados:", err);
+                    showModal("Erro ao salvar os dados. Tente novamente."); // Exibe o modal com erro
+                }               
+            });
+        });
+
+    </script>
+
+
+
+</body>
+
+</html>
