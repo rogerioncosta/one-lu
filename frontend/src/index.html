@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/style.index.css">
+    <link rel="stylesheet" href="../styles/style.modal.index.css">
     <title>Cadastro de convidados</title>
 
     <style>
@@ -27,36 +28,41 @@
         <div class="center-align">
             <div class="table-responsive">
                 <form action="/users" method="post">
-                    <label for="name">Nome do Convidado</label>
+                    <label for="name" class="label-convidado">Nome do Convidado</label>
                     <input type="text" id="name" name="name" placeholder="Digite o seu nome completo" required>
 
-                    <h1 className="">Quantos acompanhantes <span class="maiores">maiores</span> de 5 anos?</h1>
+                    <h1 class="h1_acompanhantes">Quantos acompanhantes <span class="span-faixa-etaria">maiores</span> de 5 anos?</h1>
 
                     <div class="contador">
                         <button type="button" id="btnMenos" class="estiloBotaoMenos"><span>-</span></button>
 
-                        <input type="number" id="acompanhantesMaiores" class="acompanhantes" name="acompanhantes" value="0"
-                            min="0" readonly>
+                        <!-- <input type="number" id="acompanhantesMaiores" class="acompanhantes" name="acompanhantes" value="0"
+                            min="0" readonly> -->
+
+                        <h1 id="acompanhantesMaiores" class="acompanhantes">0</h1>
 
                         <button type="button" id="btnMais" class="estiloBotaoMais"><span>+</span></button>
                     </div>
 
-                    <h1 className="">Quantos acompanhantes <span class="menores">menores</span> de 5 anos?</h1>
-                    <!--
+                    <!-- ******* -->
+
+                    <h1 class="h1_acompanhantes">Quantos acompanhantes <span class="span-faixa-etaria">menores</span> de 5 anos?</h1>
+
                     <div class="contador">
                         <button type="button" id="btnMenos2" class="estiloBotaoMenos"><span>-</span></button>
 
-                        <input type="number" id="acompanhantesMenores" class="acompanhantes" name="acompanhantes" value="0"
-                            min="0" readonly>
+                        <!-- <input type="number" id="acompanhantesMaiores" class="acompanhantes" name="acompanhantes" value="0"
+                            min="0" readonly> -->
+
+                        <h1 id="acompanhantesMenores" class="acompanhantes">0</h1>
 
                         <button type="button" id="btnMais2" class="estiloBotaoMais"><span>+</span></button>
                     </div>
-                    -->
 
-                    <button type="submit">Confirmar</button>
+                    <button type="submit" class="button-confirm">Confirmar</button>
                 </form>
 
-                <div className="styles.localizacao">
+                <div class="localizacao">
                     <h1>Para saber a data e local, verifique o convite que você recebeu pelo WhatsApp.</h1>
                 </div>
 
@@ -81,27 +87,29 @@
                 const inputAcompanhantes = contador.querySelector(".acompanhantes");
 
                 btnMais.addEventListener("click", () => {
-                    const valorAtual = parseInt(inputAcompanhantes.value, 10);
+                    let valorAtual = parseInt(inputAcompanhantes.textContent, 10);
                     if (valorAtual < 3) {
-                        inputAcompanhantes.value = valorAtual + 1;
+                        // inputAcompanhantes.value = valorAtual + 1;
+                        valorAtual++;
+                        inputAcompanhantes.textContent = valorAtual;
                     }
                 });
 
                 btnMenos.addEventListener("click", () => {
-                    const valorAtual = parseInt(inputAcompanhantes.value, 10);
+                    let valorAtual = parseInt(inputAcompanhantes.textContent, 10);
                     if (valorAtual > 0) {
-                        inputAcompanhantes.value = valorAtual - 1;
+                        // inputAcompanhantes.value = valorAtual - 1;
+                        valorAtual--;
+                        inputAcompanhantes.textContent = valorAtual;
                     }
                 });
+            });       
+
+            document.getElementById("name").addEventListener("input", function() {
+                this.value = this.value.toUpperCase();
             });
-
-        });
-
-        document.getElementById("name").addEventListener("input", function() {
-            this.value = this.value.toUpperCase();
-        });
         
-        document.addEventListener("DOMContentLoaded", () => {
+       
             const form = document.querySelector("form");
             const modal = document.getElementById("modal");
             const closeModal = document.getElementById("closeModal");
@@ -127,12 +135,10 @@
 
             form.addEventListener("submit", async (event) => {
                 event.preventDefault(); // Impede o envio padrão do formulário
-
                 const nome = document.getElementById("name").value.toUpperCase();
-                const acompanhantesMaiores = parseInt(
-                    document.getElementById("acompanhantesMaiores").value,
-                    10
-                );
+                const acompanhantesMaiores = parseInt(document.querySelector(".acompanhantes").textContent, 10);
+                // const acompanhantesMenores = parseInt(document.querySelector(".acompanhantes").textContent, 10);
+
 
                 // Envia os dados para o backend
                 try {

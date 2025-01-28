@@ -1,42 +1,170 @@
-/* Estilos para o modal */
-.modal {
-    display: block;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
+@font-face {
+    font-family: "SegoeScript";
+    src: url("../src/fonts/segoesc.ttf");
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../src/fonts/Roboto-Regular.ttf");
+}
+
+body{  
     box-sizing: border-box;
+    background: radial-gradient(circle, rgba(161, 223, 62, 0.782) 0%, rgb(233, 213, 148) 100%); 
+}
+
+#conteudo-pagina{
+    /* background-color:rgb(235, 225, 235); */
+    background:  rgba(235, 253, 215, 0.782);
+    margin: 0 auto;    
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 4px solid rgb(195, 255, 134);
+    border-radius: 20px;
+    width: 500px;
+    /* height: 900px;   */
+    text-align: center; 
+}
+
+#guest_header{
+    text-align: center;
+    font-family: "SegoeScript";
+    color: rgb(252, 138, 157);
+    padding: 5px;
+}
+
+.label-convidado{
+    margin-left: 48px;
+    margin-bottom: 4px;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(252, 100, 125);
+    display: block;
+    font-family: "SegoeScript";
+    text-align: left;
+}
+
+.h1_acompanhantes{
+    text-align: center;
+    font-family: "SegoeScript";
+    font-size: 20px;
+    color: rgb(252, 100, 125);
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+#name{
+    width: 80%;
+    height: 50px;   
+    border: 2px solid rgb(161, 244, 78);
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-family: "Roboto";
+    font-size: 16px;
+    text-align: center;
+    background-color: rgb(236, 235, 235);    
+}
+
+#name:focus{
+    border: 2px solid pink;
+    outline: none;
+}
+
+#name:hover{
+    border: 2px solid pink;
+}
+
+.span-faixa-etaria{
+    font-size: 25px;
+    color: rgb(255, 0, 81);
+}
+
+.contador{
+    /* border: 2px solid pink; */
+    align-items: center;
+    display: flex;
+    width: 150px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    justify-content: space-around;
+
+    h1{
+        /* border: 1px solid pink; */
+        font-family: "Roboto";
+        color: black;
+        font-size: 25px;
+        margin: 0 auto;
+    }
+}
+
+.estiloBotaoMenos{   
+    border: none;
+    background: pink;
+    border-radius: 50%; 
+    font-size: 30px; 
+    color: black;
+    height: 50px;
+    width: 50px;    
+    cursor: pointer;
+}
+
+.estiloBotaoMais{   
+    border: none;
+    background: pink;
+    border-radius: 50%; 
+    font-size: 30px; 
+    color: black;
+    height: 50px;
+    width: 50px;    
+    cursor: pointer;
+}
+
+.button-confirm{
+    width: 250px;
+    text-align: center;
+    font-family: "Roboto";
+    font-size: 30px;
+    color: white;
+    background-color: rgb(252, 100, 125);
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    
+}
+
+.button-confirm:hover{
+    background-color: rgb(250, 60, 158);
+    transition: 0.5s;    
+    opacity: 0.7;
+}
+
+.localizacao{
+    margin: 0 auto; 
+    margin-top: 20px;
+    text-align: center;
+    /* background: rgb(252, 138, 157); */
+    border-radius: 10px;    
+    padding: 10px;
+    width: 90%;
+    /* height: 160px; */
+    font-family: "SegoeScript";
+    color: rgb(252, 100, 125);    
+    font-weight: bolder;
+    font-size: 12px;
 }
 
 .modal-content {
-    background-color: white;
-    margin: 10% auto;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    width: 60%;
+    height: 60%;
+    width: 30%;
+    font-family: "Roboto";
+    font-size: 30px;
 }
 
-.close {
-    /* display: none; */
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.hidden {
-    display: none;
+@media (max-width: 520px){
+    .container{
+        width: 90%;
+    }
 }
