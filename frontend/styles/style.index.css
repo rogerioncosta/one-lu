@@ -8,9 +8,37 @@
     src: url("../src/fonts/Roboto-Regular.ttf");
 }
 
+
 body{  
     box-sizing: border-box;
-    background: radial-gradient(circle, rgba(161, 223, 62, 0.782) 0%, rgb(233, 213, 148) 100%); 
+    background: radial-gradient(circle, rgba(161, 223, 62, 0.782) 0%, rgb(233, 213, 148) 100%);   
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    margin-top: -100px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 900px;
+    background: url('../img/garden2.png') no-repeat center top;
+    background-size: cover;
+    opacity: 0.5; /* Define a opacidade apenas do fundo */
+    z-index: -1; /* Garante que fique atrás do conteúdo */
+  }
+
+
+.title{
+    margin-top: -40px;
+    margin-bottom: 30px;
+    font-family: "SegoeScript";  
+    color: rgb(252, 100, 125);
+}
+
+.title > span{
+    font-size: 50px;
 }
 
 #conteudo-pagina{
@@ -22,7 +50,7 @@ body{
     border: 4px solid rgb(195, 255, 134);
     border-radius: 20px;
     width: 500px;
-    /* height: 900px;   */
+    /* height: 900px;   */    
     text-align: center; 
 }
 
@@ -40,7 +68,7 @@ body{
     font-weight: bold;
     color: rgb(252, 100, 125);
     display: block;
-    font-family: "SegoeScript";
+    font-family: "SegoeScript"; 
     text-align: left;
 }
 
@@ -50,34 +78,35 @@ body{
     font-size: 20px;
     color: rgb(252, 100, 125);
     padding: 5px;
-    margin-bottom: 20px;
+    margin-top: -10px;
+    margin-bottom: 20px;    
 }
 
-#name{
+#name, #olderCompanion{
     width: 80%;
     height: 50px;   
     border: 2px solid rgb(161, 244, 78);
-    border-radius: 6px;
-    margin-bottom: 15px;
+    border-radius: 15px;
+    margin-bottom: 30px;
     font-family: "Roboto";
     font-size: 16px;
     text-align: center;
     background-color: rgb(236, 235, 235);    
 }
 
-#name:focus{
+#name:focus, #olderCompanion:focus{
     border: 2px solid pink;
     outline: none;
 }
 
-#name:hover{
+#name:hover, #olderCompanion:hover{
     border: 2px solid pink;
 }
 
-.span-faixa-etaria{
+/* .span-faixa-etaria{
     font-size: 25px;
     color: rgb(255, 0, 81);
-}
+} */
 
 .contador{
     /* border: 2px solid pink; */
@@ -131,8 +160,7 @@ body{
     margin-bottom: 20px;
     border: none;
     border-radius: 15px;
-    cursor: pointer;
-    
+    cursor: pointer;    
 }
 
 .button-confirm:hover{

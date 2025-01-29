@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/style.index.css">
     <link rel="stylesheet" href="../styles/style.modal.index.css">
+
     <title>Cadastro de convidados</title>
 
     <style>
@@ -25,28 +26,21 @@
     <main id="conteudo-pagina" class="center-align">
 
         <h1 id="guest_header"></h1>
+        
         <div class="center-align">
+
             <div class="table-responsive">
+                <h1 class="title"><span>Lulu</span> 1 aninho</h1>
                 <form action="/users" method="post">
                     <label for="name" class="label-convidado">Nome do Convidado</label>
-                    <input type="text" id="name" name="name" placeholder="Digite o seu nome completo" required>
+                    <input type="text" id="name" name="name" placeholder="Digite o seu nome completo..." required>
 
-                    <h1 class="h1_acompanhantes">Quantos acompanhantes <span class="span-faixa-etaria">maiores</span> de 5 anos?</h1>
-
-                    <div class="contador">
-                        <button type="button" id="btnMenos" class="estiloBotaoMenos"><span>-</span></button>
-
-                        <!-- <input type="number" id="acompanhantesMaiores" class="acompanhantes" name="acompanhantes" value="0"
-                            min="0" readonly> -->
-
-                        <h1 id="acompanhantesMaiores" class="acompanhantes">0</h1>
-
-                        <button type="button" id="btnMais" class="estiloBotaoMais"><span>+</span></button>
-                    </div>
+                    <label for="olderCompanion" class="label-convidado">Nome do Acompanhante</label>
+                    <input type="text" id="olderCompanion" name="olderCompanion" placeholder="Digite o nome do acompanhante principal...">
 
                     <!-- ******* -->
 
-                    <h1 class="h1_acompanhantes">Quantos acompanhantes <span class="span-faixa-etaria">menores</span> de 5 anos?</h1>
+                    <h1 class="h1_acompanhantes">Quantos filhos?</h1>
 
                     <div class="contador">
                         <button type="button" id="btnMenos2" class="estiloBotaoMenos"><span>-</span></button>
@@ -108,6 +102,10 @@
             document.getElementById("name").addEventListener("input", function() {
                 this.value = this.value.toUpperCase();
             });
+
+            document.getElementById("olderCompanion").addEventListener("input", function() {
+                this.value = this.value.toUpperCase();
+            });
         
        
             const form = document.querySelector("form");
@@ -136,20 +134,27 @@
             form.addEventListener("submit", async (event) => {
                 event.preventDefault(); // Impede o envio padrão do formulário
                 const nome = document.getElementById("name").value.toUpperCase();
-                const acompanhantesMaiores = parseInt(document.querySelector(".acompanhantes").textContent, 10);
-                // const acompanhantesMenores = parseInt(document.querySelector(".acompanhantes").textContent, 10);
-
+                const nomeAcompanhanteMaior = document.getElementById("olderCompanion").value.toUpperCase();
+                const acompanhantesMenoresValue = document.querySelector("#acompanhantesMenores");    
+                const acompanhantesMenores = parseInt(acompanhantesMenoresValue.textContent, 10);
+                // const acompanhantesMaiores = parseInt(document.querySelector("#acompanhantesMaiores").textContent, 10);
 
                 // Envia os dados para o backend
                 try {
                     const response = await fetch("/users", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({ name: nome, rg: acompanhantesMaiores }),
+                        body: JSON.stringify({ 
+                            name: nome, 
+                            olderCompanion: nomeAcompanhanteMaior, 
+                            minorCompanion: acompanhantesMenores 
+                        }),
                     });
-
+                    
                     const result = await response.json();
-                    showModal(result.message || "Cadastro realizado com sucesso!"); // Exibe o modal
+                    showModal(result.message || "Cadastro realizado com sucesso!"); // Exibe o modal    
+                    form.reset(); 
+                    acompanhantesMenoresValue.textContent = "0";   
 
                 } catch (err) {
                     console.error("Erro ao salvar os dados:", err);

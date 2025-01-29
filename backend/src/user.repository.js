@@ -6,14 +6,15 @@ class UserRepository {
         this.client = client;
     }
 
-    async create({ name, rg }) {
+    async create({ name, olderCompanion, minorCompanion}) {
         const id = randomUUID();
         await this.client.query(
-            "INSERT INTO USERS(ID, NAME, RG) VALUES($1, $2, $3)", [id, name, rg]
+            "INSERT INTO USERS(ID, NAME, OLDER_COMPANION, MINOR_COMPANION) VALUES($1, $2, $3, $4)", [id, name, olderCompanion, minorCompanion]
         );
         const user = Object.assign({
             name, 
-            rg,
+            olderCompanion,
+            minorCompanion,
             id,
         });
         return user;
@@ -25,8 +26,8 @@ class UserRepository {
     }
 
     async update({ name, rg }, id) {
-        const query = "UPDATE USERS SET NAME = $1, RG = $2 WHERE ID = $3";
-        await this.client.query(query, [name, rg, id]);
+        const query = "UPDATE USERS SET NAME = $1, OLDER_COMPANION = $2, MINOR_COMPANION = $3 WHERE ID = $4";
+        await this.client.query(query, [name, olderCompanion, minorCompanion, id]);
     }
 
     async findById(id) {

@@ -27,11 +27,14 @@
             <div class="center-align">
                 <div class="table-responsive">
                     <table id="tabela" style="border-collapse: collapse;">
-                        <thead>
+                        <thead class="thead">
                             <tr>
                                 <th hidden>ID</th>
-                                <th>Nome</th>
-                                <th>Rg</th>               
+                                <th>#</th>
+                                <th>Nome Convidado</th>
+                                <th>Nome Acompanhante 5+</th>  
+                                <th>Qtde Acompanhantes 5-</th> 
+                                <th>Ações</th> 
 
                             </tr>
                         </thead>
@@ -68,15 +71,25 @@
 
                     if (data.length > 0) {   
 
+                        let qtd = 1;
+
                         data.forEach(row => {                          
 
-                            const tr = document.createElement('tr');
+                            const tr = document.createElement('tr');                            
 
                             tr.innerHTML = `
+                                <td>${qtd}</td>
                                 <td hidden>${row.id}</td>
                                 <td>${row.name}</td>
-                                <td>${row.rg}</td>                              
+                                <td>${row.older_companion}</td>   
+                                <td>${row.minor_companion}</td> 
+                                <td colspan="2">
+                                    <button type="submit" class="actionButtEdit">Editar</button>
+                                    <button type="submit" class="actionButtDelete">Excluir</button>
+                                </td>
                             `;
+
+                            qtd++;
 
                             tabelaBody.appendChild(tr);
                         });                        
