@@ -1,8 +1,11 @@
 const http = require("http");
-const user = require("./user");
+// const user = require("./user");
 
 const fs = require("fs");
 const path = require("path");
+const { UserController } = require("./controllers/user.controller");
+
+const userController = new UserController();
 
 const server = http.createServer(async (request, response) => {
     // Cadastro de convidado
@@ -70,83 +73,18 @@ const server = http.createServer(async (request, response) => {
     if(URL.startsWith("/users")) {
         //Cadastrar convidado
         if (METHOD === "POST") {
-            request.on("data", async (data) => {
-                const body = JSON.parse(data);
-                //const result = 
-                await user.create(body);
-                // return response.end(JSON.stringify(result));
-                return response.end(JSON.stringify({
-                    message: "Convidado inserido com sucesso!",
-                }));
-
-            });
-            return; // Este return evita que a execução continue
-            //O segundo return (fora do request.on) garante que o fluxo principal do código do servidor não continue até a lógica final ("Rota não encontrada"), enquanto o callback do request.on ainda está sendo processado.
+            return userController.post(request, response);
         }
 
         if (METHOD === "GET") {
-            try {
-                const result = await user.findAll();
-                response.writeHead(200, { "Content-Type": "application/json" });
-                return response.end(JSON.stringify(result));
-            } catch (err) {
-                response.writeHead(500, { "Content-Type": "application/json" });
-                return response.end(JSON.stringify({ error: "Erro ao buscar usuários." }));
-            }
+            return userController.get(request, response);            
         }
 
         if (METHOD === "PUT") {
-            // Capturar o ID do convidado
-            const paramSplit = URL.split("/");
-            const id = paramSplit[2];
-
-            request.on("data", async (data) => {
-                // Receber as informações que quero alterar do nosso body
-                const body = JSON.parse(data);
-
-                try {
-                    await user.update(body, id);
-                    return response.end(
-                        JSON.stringify({
-                            message: "Convidado alterado com sucesso!",
-                        })
-                    );
-                }catch(err) {   
-                    // Trata o erro e envia uma resposta apropriada.
-                    response.statusCode = 500; // Código de erro interno.                   
-                    return response.end(
-                        JSON.stringify({
-                            message: err.message,
-                        })
-                    );
-                }
-            });
-            return; // Garante que o fluxo não continue antes da conclusão da leitura
-            //O segundo return (fora do request.on) garante que o fluxo principal do código do servidor não continue até a lógica final ("Rota não encontrada"), enquanto o callback do request.on ainda está sendo processado.
+            return userController.put(request, response);            
         }
 
-        if (METHOD === "DELETE") {
-            const paramSplit = URL.split("/");
-            const id = paramSplit[2];
-            
-            try {
-                await user.delete(id);
-                return response.end(
-                    JSON.stringify({
-                        message: "Convidado excluído com sucesso!",
-                    })
-                );
-            }catch(err) { 
-                // Trata o erro e envia uma resposta apropriada.
-                response.statusCode = 500; // Código de erro interno.                   
-                return response.end(
-                    JSON.stringify({
-                        message: err.message,
-                    })
-                );
-            }            
-
-        }
+        // if (METHOD === "DELETE") {}
 
     }
     // Requisição não encontrada
