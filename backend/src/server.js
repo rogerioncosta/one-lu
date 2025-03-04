@@ -33,6 +33,7 @@ const server = http.createServer(async (request, response) => {
             let contentType = "text/plain";
             if (ext === ".css") contentType = "text/css";
             if (ext === ".ttf") contentType = "font/ttf";
+            if (ext === ".png") contentType = "image/png";
 
             response.writeHead(200, { "Content-Type": contentType });
             return response.end(content);
