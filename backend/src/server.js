@@ -41,7 +41,7 @@ const server = http.createServer(async (request, response) => {
         return;
     }
 
-    // Acesso local
+    /*/ Acesso local
     if (URL === "/") {
         // Lê o arquivo HTML e envia como resposta
         const filePath = path.join(__dirname, "..", "..", "frontend", "src", "index.html");
@@ -54,9 +54,9 @@ const server = http.createServer(async (request, response) => {
             return response.end(content);
         });
         return;
-    }
+    }*/
 
-    // Acesso localhost
+    /*/ Acesso localhost
     if (URL === "/guestList") {
         // Lê o arquivo HTML e envia como resposta
         const filePath = path.join(__dirname, "..", "..", "frontend", "src", "guestList.html");
@@ -69,7 +69,7 @@ const server = http.createServer(async (request, response) => {
             return response.end(content);
         });
         return;
-    }
+    }*/
 
     if(URL.startsWith("/users")) {
         //Cadastrar convidado
