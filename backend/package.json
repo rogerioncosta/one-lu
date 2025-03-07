@@ -1,6 +1,4 @@
 {
-  "main": "index.js",
-  
   "devDependencies": {
     "pg": "^8.13.1"
   },
