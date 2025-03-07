@@ -19,7 +19,7 @@ const server = http.createServer(async (request, response) => {
     const METHOD = request.method;
     const URL = request.url;  
 
-    // Servir arquivos estáticos (CSS e fontes)
+    /*/ Servir arquivos estáticos (CSS e fontes)
     if (URL.startsWith("/styles/") || URL.startsWith("/src/")) {
         const filePath = path.join(__dirname, "..", "..", "frontend", URL);
         fs.readFile(filePath, (err, content) => {
@@ -39,7 +39,7 @@ const server = http.createServer(async (request, response) => {
             return response.end(content);
         });
         return;
-    }
+    }*/
 
     /*/ Acesso local
     if (URL === "/") {
