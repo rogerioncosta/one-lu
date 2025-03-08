@@ -21,6 +21,6 @@ const client = new Client({
     ssl: { rejectUnauthorized: false } // Necessário para Neon
 });
 
-// client.connect();
+client.connect();
 
 module.exports = { client };
