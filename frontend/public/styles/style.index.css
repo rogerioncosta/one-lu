@@ -110,12 +110,14 @@ body::before {
 
 .contador{
     /* border: 2px solid pink; */
+    display: flex;
     align-items: center;
     display: flex;
     width: 150px;
     margin: 0 auto;
     margin-bottom: 20px;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 10px; /* Espaço entre os elementos */
 
     h1{
         /* border: 1px solid pink; */
@@ -130,10 +132,10 @@ body::before {
     border: none;
     background: pink;
     border-radius: 50%; 
-    font-size: 30px; 
+    font-size: 20px; 
     color: black;
-    height: 40px;
-    width: 40px;    
+    height: 50px;
+    width: 50px;    
     cursor: pointer;
 }
 
@@ -141,10 +143,10 @@ body::before {
     border: none;
     background: pink;
     border-radius: 50%; 
-    font-size: 30px; 
+    font-size: 20px; 
     color: black;
-    height: 40px;
-    width: 40px;    
+    height: 50px;
+    width: 50px;    
     cursor: pointer;
 }
 
