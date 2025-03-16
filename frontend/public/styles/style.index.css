@@ -49,7 +49,7 @@ body::before {
     margin-bottom: 20px;
     border: 4px solid rgb(195, 255, 134);
     border-radius: 20px;
-    width: 500px;
+    width: 98%;
     /* height: 900px;   */    
     text-align: center; 
 }
@@ -192,7 +192,7 @@ body::before {
 }
 
 @media (max-width: 520px){
-    .container{
+    .conteudo-pagina{
         width: 90%;
     }
 }
