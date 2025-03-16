@@ -8,6 +8,11 @@
     src: url("../fonts/Roboto-Regular.ttf");
 }
 
+@font-face {
+    font-family: "Dancing";
+    src: url("../fonts/DancingScript-Regular.ttf");
+}
+
 
 body{  
     box-sizing: border-box;
@@ -33,7 +38,7 @@ body::before {
 .title{
     margin-top: -40px;
     margin-bottom: 30px;
-    font-family: "SegoeScript";  
+    font-family: "Dancing";  
     color: rgb(252, 100, 125);
 }
 
@@ -62,20 +67,20 @@ body::before {
 }
 
 .label-convidado{
-    margin-left: 30px;
+    margin-left: 50px;
     margin-bottom: 4px;
-    font-size: 15px;
+    font-size: 25px;
     font-weight: bold;
     color: rgb(252, 100, 125);
     display: block;
-    font-family: "SegoeScript"; 
+    font-family: "Dancing"; 
     text-align: left;
 }
 
 .h1_acompanhantes{
     text-align: center;
-    font-family: "SegoeScript";
-    font-size: 20px;
+    font-family: "Dancing";
+    font-size: 25px;
     color: rgb(252, 100, 125);
     padding: 5px;
     margin-top: -10px;
@@ -173,17 +178,17 @@ body::before {
 
 .localizacao{
     margin: 0 auto; 
-    margin-top: 20px;
+    margin-top: -10px;
     text-align: center;
     /* background: rgb(252, 138, 157); */
     border-radius: 10px;    
     padding: 10px;
     width: 90%;
     /* height: 160px; */
-    font-family: "SegoeScript";
+    font-family: "Dancing";
     color: rgb(252, 100, 125);    
     font-weight: bolder;
-    font-size: 12px;
+    font-size: 15px;
 }
 
 .modal-content {
@@ -196,5 +201,17 @@ body::before {
 @media (max-width: 520px){
     #conteudo-pagina{
         width: 90%;
-    }    
+    } 
+    
+    .label-convidado{
+        margin-left: 30px;
+    }
+
+    #name, #olderCompanion{
+        font-size: 12px;
+    }
+
+    .button-confirm{
+        width: 180px;
+    }
 }
