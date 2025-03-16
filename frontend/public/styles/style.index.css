@@ -62,7 +62,7 @@ body::before {
 }
 
 .label-convidado{
-    margin-left: 48px;
+    margin-left: 30px;
     margin-bottom: 4px;
     font-size: 15px;
     font-weight: bold;
@@ -132,8 +132,8 @@ body::before {
     border-radius: 50%; 
     font-size: 30px; 
     color: black;
-    height: 50px;
-    width: 50px;    
+    height: 40px;
+    width: 40px;    
     cursor: pointer;
 }
 
@@ -143,8 +143,8 @@ body::before {
     border-radius: 50%; 
     font-size: 30px; 
     color: black;
-    height: 50px;
-    width: 50px;    
+    height: 40px;
+    width: 40px;    
     cursor: pointer;
 }
 
