@@ -87,6 +87,11 @@ body::before {
     margin-bottom: 20px;    
 }
 
+.acompanhantes-qtde {
+    text-align: center;
+    font-family: "Roboto";
+}
+
 #name, #olderCompanion{
     width: 80%;
     height: 50px;   
@@ -156,13 +161,13 @@ body::before {
 }
 
 .button-confirm{
-    width: 250px;
+    width: 200px;
     text-align: center;
     font-family: "Roboto";
-    font-size: 30px;
+    font-size: 20px;
     color: white;
     background-color: rgb(252, 100, 125);
-    padding: 10px;
+    padding: 15px;
     margin-top: 20px;
     margin-bottom: 20px;
     border: none;
@@ -189,13 +194,6 @@ body::before {
     color: rgb(252, 100, 125);    
     font-weight: bolder;
     font-size: 15px;
-}
-
-.modal-content {
-    height: 60%;
-    width: 30%;
-    font-family: "Roboto";
-    font-size: 30px;
 }
 
 @media (max-width: 520px){

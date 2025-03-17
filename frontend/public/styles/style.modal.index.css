@@ -18,17 +18,19 @@
     padding: 20px;
     border-radius: 5px;
     text-align: center;
-    width: 30%;
-    height: 20%;
+    width: 40%; 
+    height: 40%;
+    font-size: 35px;
+    font-family: "Roboto";
 }
+    
 
 .close {
     /* display: none; */
-    color: #aaa;
+    color: #150213;
     float: right;
     font-size: 28px;
     font-weight: bold;
-    cursor: pointer;
 }
 
 .close:hover,
@@ -40,4 +42,11 @@
 
 .hidden {
     display: none;
+}
+
+@media (max-width: 520px){
+    .modal-content {
+        width: 70%;
+        height: 30%;
+    }
 }
