@@ -13,6 +13,13 @@ const server = http.createServer(async (request, response) => {
     response.setHeader("Access-Control-Allow-Origin", "https://one-lu.vercel.app");
     response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE, OPTIONS");
     response.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+    // TRATAR OPTIONS (PRE-FLIGHT)
+    if (request.method === "OPTIONS") {
+        response.writeHead(204); // 204 = Sem conteúdo
+        response.end();
+        return;
+    }
     
     // Cadastro de convidado
 
