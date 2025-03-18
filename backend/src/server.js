@@ -8,6 +8,12 @@ const { UserController } = require("./controllers/user.controller");
 const userController = new UserController();
 
 const server = http.createServer(async (request, response) => {
+
+    // Habilita CORS para todas as origens
+    res.setHeader("Access-Control-Allow-Origin", "https://one-lu.vercel.app/");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    
     // Cadastro de convidado
 
     // GET - Listar todos os convidados
