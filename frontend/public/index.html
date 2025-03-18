@@ -60,7 +60,7 @@
                     <h1>Para saber a data e o local, verifique o convite que você recebeu pelo WhatsApp.</h1>
                 </div>
 
-                <div id="modal" class="modal ">
+                <div id="modal" class="modal hidden">
                     <div class="modal-content">
                         <span id="closeModal" class="close">&times;</span>
                         <p id="modalMessage"></p>
@@ -78,7 +78,7 @@
             document.querySelectorAll(".contador").forEach((contador) => {
                 const btnMais = contador.querySelector(".estiloBotaoMais");
                 const btnMenos = contador.querySelector(".estiloBotaoMenos");
-                const inputAcompanhantes = contador.querySelector(".acompanhantes");
+                const inputAcompanhantes = contador.querySelector(".acompanhantes-qtde");
 
                 btnMais.addEventListener("click", () => {
                     let valorAtual = parseInt(inputAcompanhantes.textContent, 10);
