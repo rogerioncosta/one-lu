@@ -133,6 +133,10 @@
 
             form.addEventListener("submit", async (event) => {
                 event.preventDefault(); // Impede o envio padrão do formulário
+
+                const submitButton = document.querySelector(".button-confirm");
+                submitButton.disabled = true; // Desativa o botão ao iniciar o envio
+
                 const nome = document.getElementById("name").value.toUpperCase();
                 const nomeAcompanhanteMaior = document.getElementById("olderCompanion").value.toUpperCase();
                 const acompanhantesMenoresValue = document.querySelector("#acompanhantesMenores");    
@@ -159,7 +163,9 @@
                 } catch (err) {
                     console.error("Erro ao salvar os dados:", err);
                     showModal("Erro ao salvar os dados. Tente novamente."); // Exibe o modal com erro
-                }               
+                } finally {
+                    submitButton.disabled = false; // Sempre reativa o botão, independentemente do sucesso ou erro
+                }             
             });
         });
 
