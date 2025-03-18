@@ -11,7 +11,7 @@ const server = http.createServer(async (request, response) => {
 
     // Habilita CORS para todas as origens
     res.setHeader("Access-Control-Allow-Origin", "https://one-lu.vercel.app/");
-    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE, OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
     
     // Cadastro de convidado
