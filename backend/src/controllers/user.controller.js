@@ -9,7 +9,7 @@ class UserController {
             await user.create(body);
             // return response.end(JSON.stringify(result));
             return response.end(JSON.stringify({
-                message: "Convidado inserido com sucesso!",
+                message: "Convidado confirmado com sucesso!",
             }));
 
         });
