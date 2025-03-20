@@ -24,11 +24,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.getElementById("name").addEventListener("input", function () {
-        this.value = this.value.toUpperCase().trim();
+        this.value = this.value.toUpperCase();
     });
 
     document.getElementById("olderCompanion").addEventListener("input", function () {
-        this.value = this.value.toUpperCase().trim();
+        this.value = this.value.toUpperCase();
     });
 
 
@@ -61,8 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const submitButton = document.querySelector(".button-confirm");
         submitButton.disabled = true; // Desativa o botão ao iniciar o envio
 
-        const nome = document.getElementById("name").value.toUpperCase();
-        const nomeAcompanhanteMaior = document.getElementById("olderCompanion").value.toUpperCase();
+        const nome = document.getElementById("name").value.toUpperCase().trim();
+        const nomeAcompanhanteMaior = document.getElementById("olderCompanion").value.toUpperCase().trim();
         const acompanhantesMenoresValue = document.querySelector("#acompanhantesMenores");
         const acompanhantesMenores = parseInt(acompanhantesMenoresValue.textContent, 10);
         // const acompanhantesMaiores = parseInt(document.querySelector("#acompanhantesMaiores").textContent, 10);
