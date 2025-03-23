@@ -98,7 +98,9 @@ const server = http.createServer(async (request, response) => {
             return userController.put(request, response);            
         }
 
-        // if (METHOD === "DELETE") {}
+        if (METHOD === "DELETE") {
+            return userController.delete(request, response);
+        }
 
     }
     // Requisição não encontrada
