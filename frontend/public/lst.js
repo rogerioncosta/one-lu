@@ -45,8 +45,8 @@ async function fetchGuestList() {
             // Adiciona evento de clique nos botões de exclusão
             document.querySelectorAll(".actionButtDelete").forEach(button => {
                 button.addEventListener("click", async function () {
-                    const userId = this.getAttribute("data-id");
-                    await deleteUser(userId);
+                    const id = this.getAttribute("data-id");
+                    await deleteUser(id);
                 });
             });
 
@@ -61,8 +61,8 @@ async function fetchGuestList() {
 
 fetchGuestList();
 
-async function deleteUser(userId) {
-    const endpoint = `https://one-lu-backend.vercel.app/users/${userId}`;
+async function deleteUser(id) {
+    const endpoint = `https://one-lu-backend.vercel.app/users/${id}`;
 
     if (!confirm("Tem certeza que deseja excluir este usuário?")) {
         return;
