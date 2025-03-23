@@ -27,19 +27,27 @@ async function fetchGuestList() {
 
                 tr.innerHTML = `
                     <td>${qtd}</td>
-                    <td hidden>${row.id}</td>
+                    <td hidden class="userId">${row.id}</td>
                     <td>${row.name}</td>
                     <td>${row.older_companion}</td>   
                     <td>${row.minor_companion}</td> 
                     <td colspan="2">
                         <button type="submit" class="actionButtEdit">Editar</button>
-                        <button type="submit" class="actionButtDelete">Excluir</button>
+                        <button type="submit" class="actionButtDelete" data-id="${row.id}">Excluir</button>
                     </td>
                 `;
 
                 qtd++;
 
                 tabelaBody.appendChild(tr);
+            });
+
+            // Adiciona evento de clique nos botões de exclusão
+            document.querySelectorAll(".actionButtDelete").forEach(button => {
+                button.addEventListener("click", async function () {
+                    const userId = this.getAttribute("data-id");
+                    await deleteUser(userId);
+                });
             });
 
         } else {
@@ -52,3 +60,29 @@ async function fetchGuestList() {
 }
 
 fetchGuestList();
+
+async function deleteUser(userId) {
+    const endpoint = `https://one-lu-backend.vercel.app/users/${userId}`;
+
+    if (!confirm("Tem certeza que deseja excluir este usuário?")) {
+        return;
+    }
+
+    try {
+        const response = await fetch(endpoint, {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+        });
+
+        const result = await response.json();
+        alert(result.message || "Usuário excluído com sucesso!");
+
+        // Atualizar a lista após a exclusão
+        fetchGuestList();
+    } catch (error) {
+        console.error("Erro ao excluir usuário:", error);
+        alert("Erro ao excluir usuário. Tente novamente.");
+    }
+}
+
+
