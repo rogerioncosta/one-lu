@@ -76,6 +76,5 @@ body{
 @media (max-width: 820px){
     .center-align{
         width: 100%; /* Usa toda a largura disponível */
-        padding: 10px; /* Adiciona um espaçamento interno */
     }
 }
