@@ -79,7 +79,7 @@ async function deleteUser(id) {
 
         // Atualizar a lista após a exclusão
         // fetchGuestList();
-        location.reload();
+        window.location.reload();
     } catch (error) {
         console.error("Erro ao excluir convidado:", error);
         alert("Erro ao excluir convidado. Tente novamente.");
