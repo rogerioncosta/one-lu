@@ -62,8 +62,7 @@ class UserController {
 
     async delete(request, response) {
         const paramSplit = URL.split("/");
-        const id = paramSplit[2];
-        console.log(id);
+        const id = paramSplit[3];
 
         try {
             await user.delete(id);

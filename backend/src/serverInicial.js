@@ -128,6 +128,7 @@ const server = http.createServer(async (request, response) => {
         if (METHOD === "DELETE") {
             const paramSplit = URL.split("/");
             const id = paramSplit[2];
+            console.log(id);
             
             try {
                 await user.delete(id);
