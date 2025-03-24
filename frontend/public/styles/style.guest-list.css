@@ -25,13 +25,6 @@ body{
     text-align: center;
 }
 
-.center-align {
-    width: 90%;
-    max-width: 100vw; /* Garante que não ultrapasse a tela */
-    box-sizing: border-box; /* Inclui padding e bordas no tamanho total */
-    margin: 0 auto;
-}
-
 #tabela {
     margin: auto;
     border-collapse: collapse;
