@@ -9,8 +9,8 @@ const userController = new UserController();
 
 const server = http.createServer(async (request, response) => {
 
-    // Habilita CORS para todas as origens https://one-lu.vercel.app
-    response.setHeader("Access-Control-Allow-Origin", "*");
+    // Habilita CORS para todas as origens
+    response.setHeader("Access-Control-Allow-Origin", "https://one-lu.vercel.app");
     response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE, OPTIONS");
     response.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
