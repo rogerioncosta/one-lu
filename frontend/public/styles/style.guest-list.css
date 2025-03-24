@@ -69,7 +69,7 @@ body{
     cursor: pointer; 
 }
 
-@media (max-width: 520px){
+@media (max-width: 920px){
     .center-align{
         width: 90%;
     }
