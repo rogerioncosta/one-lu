@@ -61,6 +61,7 @@ class UserController {
     }
 
     async delete(request, response) {
+        const URL = request.url;
         const paramSplit = URL.split("/");
         const id = paramSplit[2];
         console.log(paramSplit);
