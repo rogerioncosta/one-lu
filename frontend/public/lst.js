@@ -64,7 +64,7 @@ fetchGuestList();
 async function deleteUser(id) {
     const endpoint = `https://one-lu-backend.vercel.app/users/${id}`;
 
-    if (!confirm("Tem certeza que deseja excluir este usuário?")) {
+    if (!confirm("Tem certeza que deseja excluir este convidado?")) {
         return;
     }
 
@@ -75,13 +75,13 @@ async function deleteUser(id) {
         });
 
         const result = await response.json();
-        alert(result.message || "Usuário excluído com sucesso!");
+        alert(result.message || "Convidado excluído com sucesso!");
 
         // Atualizar a lista após a exclusão
-        fetchGuestList();
+        // fetchGuestList();
     } catch (error) {
-        console.error("Erro ao excluir usuário:", error);
-        alert("Erro ao excluir usuário. Tente novamente.");
+        console.error("Erro ao excluir convidado:", error);
+        alert("Erro ao excluir convidado. Tente novamente.");
     }
 }
 
