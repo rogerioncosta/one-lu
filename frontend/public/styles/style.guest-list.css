@@ -27,6 +27,8 @@ body{
 
 .center-align {
     width: 90%;
+    max-width: 800px; /* Define um limite para telas maiores */
+    margin: 0 auto; /* Centraliza o conteúdo */
 }
 
 #tabela {
@@ -75,6 +77,7 @@ body{
 
 @media (max-width: 520px){
     .center-align{
-        width: 90%;
+        width: 100%; /* Usa toda a largura disponível */
+        padding: 10px; /* Adiciona um espaçamento interno */
     }
 }
