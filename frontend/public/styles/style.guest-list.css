@@ -9,7 +9,12 @@
     src: url("../fonts/Roboto-Regular.ttf");
 }
 
-body{  
+html{
+    width: 100%;
+}
+
+body{      
+    overflow-x: hidden;
     box-sizing: border-box;
     background: radial-gradient(circle, rgba(161, 223, 62, 0.782) 0%, rgb(233, 213, 148) 100%); 
     font-family: 'Roboto';
@@ -23,6 +28,14 @@ body{
     text-align: center;    
     font-weight: bold;
     text-align: center;
+}
+
+.center-align {
+    width: 90%;
+    max-width: 100vw; /* Garante que não ultrapasse a tela */
+    box-sizing: border-box; /* Inclui padding e bordas no tamanho total */
+    margin: 0 auto;
+    overflow: hidden; /* Evita que o conteúdo extra vaze */
 }
 
 #tabela {
@@ -70,8 +83,10 @@ body{
     cursor: pointer; 
 }
 
-@media (max-width: 520px){
+@media (max-width: 520px) {
     .center-align {
-        width: 100%; /* Usa toda a largura disponível */
+        width: 100%;  /* Usa toda a largura disponível */
+        padding: 10px; /* Garante que o conteúdo não encoste nas bordas */
+        overflow-wrap: break-word; /* Quebra palavras longas para evitar estouro */
     }
 }
