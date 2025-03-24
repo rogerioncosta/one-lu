@@ -26,8 +26,7 @@ body{
 }
 
 .center-align {
-    max-width: 800px; /* Define um limite para telas maiores */
-    margin: 0 auto; /* Centraliza o conteúdo */
+    width: 800px; /* Define um limite para telas maiores */
 }
 
 #tabela {
