@@ -25,6 +25,12 @@ body{
     text-align: center;
 }
 
+.center-align {
+    margin: 0 auto;
+    width: 500px;
+    height: 850px;
+}
+
 #tabela {
     margin: auto;
     border-collapse: collapse;
@@ -69,7 +75,7 @@ body{
     cursor: pointer; 
 }
 
-@media (max-width: 720px){
+@media (max-width: 520px){
     .center-align{
         width: 90%;
     }
