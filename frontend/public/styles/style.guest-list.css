@@ -70,7 +70,7 @@ body{
 }
 
 @media (max-width: 520px){
-    .center-align{
+    #conteudo-pagina {
         width: 100%; /* Usa toda a largura disponível */
     }
 }
