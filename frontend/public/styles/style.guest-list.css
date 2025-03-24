@@ -27,8 +27,7 @@ body{
 
 .center-align {
     margin: 0 auto;
-    width: 500px;
-    height: 850px;
+    width: 90%;
 }
 
 #tabela {
@@ -74,9 +73,9 @@ body{
     border-radius: 5px;
     cursor: pointer; 
 }
-
+/*
 @media (max-width: 520px){
     .center-align{
         width: 90%;
     }
-}
+}*/
