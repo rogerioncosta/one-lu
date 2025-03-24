@@ -24,10 +24,10 @@ body{
     font-weight: bold;
     text-align: center;
 }
-
+/*
 .center-align {
-    width: 800px; /* Define um limite para telas maiores */
-}
+    width: 800px; /* Define um limite para telas maiores
+}*/
 
 #tabela {
     margin: auto;
