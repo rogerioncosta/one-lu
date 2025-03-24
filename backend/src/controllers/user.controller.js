@@ -64,6 +64,8 @@ class UserController {
         const paramSplit = URL.split("/");
         const id = paramSplit[2];
 
+        console.log("ID recebido para exclusão:", id); // Log do ID no console
+
         try {
             await user.delete(id);
             return response.end(
