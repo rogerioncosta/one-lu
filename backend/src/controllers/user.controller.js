@@ -74,6 +74,7 @@ class UserController {
                 })
             );
         } catch (err) {
+            console.error("Erro ao excluir convidado:", err); // Log de erro no console
             // Trata o erro e envia uma resposta apropriada.
             response.statusCode = 500; // Código de erro interno.                   
             return response.end(
