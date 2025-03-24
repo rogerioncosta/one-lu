@@ -26,7 +26,6 @@ body{
 }
 
 .center-align {
-    margin: 0 auto;
     width: 90%;
 }
 
@@ -73,9 +72,9 @@ body{
     border-radius: 5px;
     cursor: pointer; 
 }
-/*
+
 @media (max-width: 520px){
     .center-align{
         width: 90%;
     }
-}*/
+}
