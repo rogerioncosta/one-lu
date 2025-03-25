@@ -6,7 +6,7 @@ class UserRepository {
         this.client = client;
     }
 
-    async create({ name, olderCompanion, minorCompanion}) {
+    async create({ name, olderCompanion, minorCompanion }) {
         const id = randomUUID();
         await this.client.query(
             "INSERT INTO USERS(ID, NAME, OLDER_COMPANION, MINOR_COMPANION) VALUES($1, $2, $3, $4)", [id, name, olderCompanion, minorCompanion]
@@ -25,7 +25,7 @@ class UserRepository {
         return rows;
     }
 
-    async update({ name, rg }, id) {
+    async update({ name, olderCompanion,  minorCompanion }, id) {
         const query = "UPDATE USERS SET NAME = $1, OLDER_COMPANION = $2, MINOR_COMPANION = $3 WHERE ID = $4";
         await this.client.query(query, [name, olderCompanion, minorCompanion, id]);
     }
