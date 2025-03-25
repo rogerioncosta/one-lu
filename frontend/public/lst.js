@@ -32,14 +32,25 @@ async function fetchGuestList() {
                     <td>${row.older_companion}</td>   
                     <td>${row.minor_companion}</td> 
                     <td colspan="2">
-                        <button type="submit" class="actionButtEdit">Editar</button>
+                        <button type="submit" class="actionButtEdit" data-id="${row.id}">Editar</button>
                         <button type="submit" class="actionButtDelete" data-id="${row.id}">Excluir</button>
                     </td>
                 `;
 
+                tabelaBody.appendChild(tr);
                 qtd++;
 
-                tabelaBody.appendChild(tr);
+            });
+
+            // Adiciona evento de clique nos botões de edição
+            document.querySelectorAll(".actionButtEdit").forEach(button => {
+                button.addEventListener("click", function () {
+                    const id = this.getAttribute("data-id");
+                    const selectedGuest = data.find(guest => guest.id == id);
+                    if (selectedGuest) {
+                        showEditForm(selectedGuest);
+                    }
+                });
             });
 
             // Adiciona evento de clique nos botões de exclusão
@@ -58,6 +69,66 @@ async function fetchGuestList() {
         console.error("Erro ao buscar dados:", error);
     }
 }
+
+// Função para exibir o formulário de edição com os dados do convidado
+function showEditForm(guest) {
+    document.getElementById("editUserId").value = guest.id;
+    document.getElementById("editName").value = guest.name;
+    document.getElementById("editOlderCompanion").value = guest.older_companion;
+    document.getElementById("editMinorCompanion").value = guest.minor_companion;   
+    
+    document.getElementById("editFormContainer").style.display = "block";
+}
+
+// Esconder o formulário ao cancelar
+document.getElementById("cancelEdit").addEventListener("click", function () {
+    document.getElementById("editFormContainer").style.display = "none";
+});
+
+// Evento para salvar os dados editados
+document.getElementById("editForm").addEventListener("submit", async function (event) {
+    event.preventDefault(); // Evita recarregar a página
+
+    const id = document.getElementById("editUserId").value;
+    const name = document.getElementById("editName").value;
+    const olderCompanion = document.getElementById("editOlderCompanion").value;
+    const minorCompanion = document.getElementById("editMinorCompanion").value;
+
+    const updatedGuest = {
+        name,
+        older_companion: olderCompanion,
+        minor_companion: minorCompanion
+    };
+
+    await updateGuest(id, updatedGuest);
+});
+
+// Função para enviar os dados editados para a API
+async function updateGuest(id, guestData) {
+    const endpoint = `https://one-lu-backend.vercel.app/users/${id}`;
+
+    try {
+        const response = await fetch(endpoint, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(guestData)
+        });
+
+        if (response.ok) {
+            alert("Convidado atualizado com sucesso!");
+            document.getElementById("editFormContainer").style.display = "none";
+            window.location.reload(); // Atualiza a tabela
+        } else {
+            console.error("Erro ao atualizar convidado");
+        }
+    } catch (error) {
+        console.error("Erro ao enviar atualização:", error);
+        alert("Erro ao atualizar convidado. Tente novamente.");
+    }
+}
+
 
 fetchGuestList();
 
