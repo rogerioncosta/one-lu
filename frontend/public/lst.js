@@ -90,12 +90,12 @@ document.getElementById("editForm").addEventListener("submit", async function (e
     event.preventDefault(); // Evita recarregar a página
 
     const id = document.getElementById("editUserId").value;
-    const name = document.getElementById("editName").value;
-    const olderCompanion = document.getElementById("editOlderCompanion").value;
-    const minorCompanion = document.getElementById("editMinorCompanion").value;
+    const name = document.getElementById("editName").value.trim();
+    const olderCompanion = document.getElementById("editOlderCompanion").value.trim();
+    const minorCompanion = document.getElementById("editMinorCompanion").value.trim();
 
     const updatedGuest = {
-        name,
+        name: name,
         older_companion: olderCompanion,
         minor_companion: minorCompanion
     };
@@ -107,6 +107,9 @@ document.getElementById("editForm").addEventListener("submit", async function (e
 async function updateGuest(id, guestData) {
     const endpoint = `https://one-lu-backend.vercel.app/users/${id}`;
 
+    console.log("URL da requisição PUT:", endpoint);
+    console.log("Dados enviados:", JSON.stringify(guestData));
+
     try {
         const response = await fetch(endpoint, {
             method: "PUT",
@@ -115,6 +118,9 @@ async function updateGuest(id, guestData) {
             },
             body: JSON.stringify(guestData)
         });
+
+        const responseData = await response.json();
+        console.log("Resposta do servidor:", responseData);
 
         if (response.ok) {
             alert("Convidado atualizado com sucesso!");
