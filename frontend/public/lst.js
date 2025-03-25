@@ -96,8 +96,8 @@ document.getElementById("editForm").addEventListener("submit", async function (e
 
     const updatedGuest = {
         name: name,
-        older_companion: olderCompanion,
-        minor_companion: minorCompanion
+        olderCompanion: olderCompanion,
+        minorCompanion: minorCompanion
     };
 
     await updateGuest(id, updatedGuest);
