@@ -85,7 +85,7 @@ function showEditModalForm(guest) {
     document.getElementById("editOlderCompanion").value = guest.older_companion;
     document.getElementById("editMinorCompanion").value = guest.minor_companion;   
     
-    document.getElementById("editFormContainer").style.display = "block";    
+    // document.getElementById("editFormContainer").style.display = "block";    
 
     /*/ Função para mostrar o modal
     const showModalEdit = () => {
