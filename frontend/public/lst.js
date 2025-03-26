@@ -77,7 +77,7 @@ function showEditModalForm(guest) {
     const closeModalEdit = document.getElementById("closeModalEdit");
     // const modalMessageEdit = document.getElementById("modalMessageEdit");
     const buttonCancelEdit = document.getElementById("cancelEdit");
-    
+
     modalEdit.classList.remove("hidden");  // Exibe o modal
 
     document.getElementById("editUserId").value = guest.id;
@@ -85,9 +85,7 @@ function showEditModalForm(guest) {
     document.getElementById("editOlderCompanion").value = guest.older_companion;
     document.getElementById("editMinorCompanion").value = guest.minor_companion;   
     
-    document.getElementById("editFormContainer").style.display = "block";
-
-    
+    document.getElementById("editFormContainer").style.display = "block";    
 
     /*/ Função para mostrar o modal
     const showModalEdit = () => {
