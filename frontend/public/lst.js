@@ -72,6 +72,12 @@ async function fetchGuestList() {
 
 // Função para exibir o formulário de edição com os dados do convidado
 function showEditModalForm(guest) {
+
+    const modalEdit = document.getElementById("modalEdit");
+    const closeModalEdit = document.getElementById("closeModalEdit");
+    // const modalMessageEdit = document.getElementById("modalMessageEdit");
+    const buttonCancelEdit = document.getElementById("cancelEdit");
+    
     modalEdit.classList.remove("hidden");  // Exibe o modal
 
     document.getElementById("editUserId").value = guest.id;
@@ -81,10 +87,7 @@ function showEditModalForm(guest) {
     
     document.getElementById("editFormContainer").style.display = "block";
 
-    const modalEdit = document.getElementById("modalEdit");
-    const closeModalEdit = document.getElementById("closeModalEdit");
-    // const modalMessageEdit = document.getElementById("modalMessageEdit");
-    const buttonCancelEdit = document.getElementById("cancelEdit");
+    
 
     /*/ Função para mostrar o modal
     const showModalEdit = () => {
