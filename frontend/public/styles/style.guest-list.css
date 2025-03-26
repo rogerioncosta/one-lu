@@ -106,14 +106,60 @@ body{
     border-radius: 8px;
     text-align: center;
     width: 60%; 
-    height: 50%;
+    height: 55%;
     font-size: 15px;
     font-family: "Dancing";  
-    color: rgb(252, 100, 125);  
+    color: rgb(252, 100, 125); 
+
 }
     
 .modalEdit-content h2 {
     font-family: "Dancing";  
+}
+
+#editForm{
+    width: 100%;
+    /* border: 2px solid black; */
+    display: inline-block;
+}
+
+.editLabelConvidado {
+    margin-left: 80px;
+    margin-bottom: 4px;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(252, 100, 125);
+    display: block;
+    font-family: "Dancing"; 
+    text-align: left;
+    
+}
+
+#editName, #editOlderCompanion, #editMinorCompanion {
+    width: 80%;
+    height: 30px;   
+    border: 2px solid rgb(161, 244, 78);
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    font-family: "Roboto";
+    font-size: 16px;
+    text-align: center;
+    background-color: rgb(236, 235, 235);    
+}
+
+#editName:focus, #editOlderCompanion:focus, #editMinorCompanion:focus{
+    border: 2px solid pink;
+    outline: none;
+}
+
+#editName:hover, #editOlderCompanion:hover, #editMinorCompanion:hover{
+    border: 2px solid pink;
+}
+
+#confirmEdit, #cancelEdit {
+   
+    margin-top: 10px;
 }
 
 .close {
@@ -137,12 +183,17 @@ body{
 }
 
 @media (max-width: 520px){
+
     .center-align {
         width: 100%;  /* Usa toda a largura disponível */
     }
 
+    .editLabelConvidado{
+        margin-left: 30px;
+    }
+
     .modalEdit-content {
         width: 80%;
-        height: 80%;
+        height: 37%;
     }
 }

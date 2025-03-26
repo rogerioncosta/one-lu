@@ -56,17 +56,23 @@
                     <form id="editForm">
                         <input type="hidden" id="editUserId" >
 
-                        <label for="editName">Nome do Convidado</label>
-                        <input type="text" id="editName" maxlength="30" required>
+                        <div>
+                            <label for="editName" class="editLabelConvidado">Nome do Convidado</label>
+                            <input type="text" id="editName" maxlength="30" required>
+                        </div>
 
-                        <label for="editOlderCompanion">Nome do Acompanhante</label>
-                        <input type="text" id="editOlderCompanion" maxlength="30">
+                        <div>
+                            <label for="editOlderCompanion" class="editLabelConvidado">Nome do Acompanhante</label>
+                            <input type="text" id="editOlderCompanion" maxlength="30">
+                        </div>
 
-                        <label for="editMinorCompanion">Qtde Filhos</label>
-                        <input type="number" id="editMinorCompanion">
+                            <label for="editMinorCompanion" class="editLabelConvidado">Qtde Filhos</label>
+                            <input type="number" id="editMinorCompanion">
+                        <div>
 
-                        <button type="submit">Confirmar Edição</button>
-                        <button type="button" id="cancelEdit">Cancelar</button>
+                            <button type="submit" id="confirmEdit">Confirmar Edição</button>
+                            <button type="button" id="cancelEdit">Cancelar</button>
+                        </div>
                     </form>
 
                 </div>
