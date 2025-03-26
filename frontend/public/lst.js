@@ -27,7 +27,7 @@ async function fetchGuestList() {
 
                 tr.innerHTML = `
                     <td>${qtd}</td>
-                    <td class="userId" type="hidden">${row.id}</td>
+                    <td class="userId hidden">${row.id}</td>
                     <td>${row.name}</td>
                     <td>${row.older_companion}</td>   
                     <td>${row.minor_companion}</td> 
