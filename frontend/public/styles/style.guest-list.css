@@ -4,6 +4,21 @@
     outline: 0;
   } */ 
 
+@font-face {
+    font-family: "SegoeScript";
+    src: url("../fonts/segoesc.ttf");
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Dancing";
+    src: url("../fonts/DancingScript-Regular.ttf");
+}
+
 body{ 
     box-sizing: border-box;
     background: radial-gradient(circle, rgba(161, 223, 62, 0.782) 0%, rgb(233, 213, 148) 100%); 
