@@ -45,8 +45,34 @@
                     </table>
                 </div>
             </div>
+
+            <!-- Modal de Edição (Inicialmente Oculta) -->
+            <div id="modalEdit" class="modalEdit hidden">
+                <div class="modalEdit-content">
+                    <span id="closeModalEdit" class="close">&times;</span>
+
+                    <h2>Editar convidado</h2>
+                    <form id="editForm">
+                        <input id="editUserId">
+
+                        <label for="editName">Nome do Convidado</label>
+                        <input type="text" id="editName" maxlength="30" required>
+
+                        <label for="editOlderCompanion">Nome do Acompanhante</label>
+                        <input type="text" id="editOlderCompanion" maxlength="30">
+
+                        <label for="editMinorCompanion">Qtde Filhos</label>
+                        <input type="number" id="editMinorCompanion">
+
+                        <button type="submit">Confirmar Edição</button>
+                        <button type="button" id="cancelEdit">Cancelar</button>
+                    </form>
+
+                </div>
+            </div>
             
-            <!-- Formulário de Edição (Inicialmente Oculto) -->
+            <!--
+            Formulário de Edição (Inicialmente Oculto)
             <div id="editFormContainer" style="display: none;">
                 <h2>Editar convidado</h2>
                 <form id="editForm">
@@ -58,7 +84,7 @@
                     <label for="editOlderCompanion">Nome do Acompanhante</label>
                     <input type="text" id="editOlderCompanion" maxlength="30">
 
-                    <!-- ******* -->
+                     *******
 
                     <label for="editMinorCompanion">Qtde Filhos</label>
                     <input type="number" id="editMinorCompanion">
@@ -67,6 +93,7 @@
                     <button type="button" id="cancelEdit">Cancelar</button>
                 </form>
             </div>
+            -->
 
         </main>
 

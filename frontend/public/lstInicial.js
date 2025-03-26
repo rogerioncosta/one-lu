@@ -48,7 +48,7 @@ async function fetchGuestList() {
                     const id = this.getAttribute("data-id");
                     const selectedGuest = data.find(guest => guest.id == id);
                     if (selectedGuest) {
-                        showEditModalForm(selectedGuest);
+                        showEditForm(selectedGuest);
                     }
                 });
             });
@@ -71,49 +71,19 @@ async function fetchGuestList() {
 }
 
 // Função para exibir o formulário de edição com os dados do convidado
-function showEditModalForm(guest) {
-    modalEdit.classList.remove("hidden");  // Exibe o modal
-
+function showEditForm(guest) {
     document.getElementById("editUserId").value = guest.id;
     document.getElementById("editName").value = guest.name;
     document.getElementById("editOlderCompanion").value = guest.older_companion;
     document.getElementById("editMinorCompanion").value = guest.minor_companion;   
     
     document.getElementById("editFormContainer").style.display = "block";
-
-    const modalEdit = document.getElementById("modalEdit");
-    const closeModalEdit = document.getElementById("closeModalEdit");
-    // const modalMessageEdit = document.getElementById("modalMessageEdit");
-    const buttonCancelEdit = document.getElementById("cancelEdit");
-
-    /*/ Função para mostrar o modal
-    const showModalEdit = () => {
-        modalEdit.classList.remove("hidden");  // Exibe o modal
-    };*/
-
-    // Fecha o modal ao clicar no "X"
-    closeModalEdit.addEventListener("click", () => {
-        modalEdit.classList.add("hidden");
-    });
-
-    // Fecha o modal ao clicar fora do conteúdo
-    modalEdit.addEventListener("click", (event) => {
-        if (event.target === modalEdit) {
-            modalEdit.classList.add("hidden");
-        }
-    });
-
-    // Fecha o modal ao clicar no "cancelar do formulário"
-    buttonCancelEdit.addEventListener("click", () => {
-        modalEdit.classList.add("hidden");
-    });
 }
 
-/*// Esconder o formulário ao cancelar
+// Esconder o formulário ao cancelar
 document.getElementById("cancelEdit").addEventListener("click", function () {
     document.getElementById("editFormContainer").style.display = "none";
-});*/
-
+});
 
 // Evento para salvar os dados editados
 document.getElementById("editForm").addEventListener("submit", async function (event) {
