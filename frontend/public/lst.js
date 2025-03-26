@@ -155,7 +155,8 @@ async function updateGuest(id, guestData) {
 
         if (response.ok) {
             alert("Convidado atualizado com sucesso!");
-            document.getElementById("editFormContainer").style.display = "none";
+            document.getElementById("modalEdit").classList.add("hidden"); // Fecha o modal
+            // document.getElementById("editFormContainer").style.display = "none";
             window.location.reload(); // Atualiza a tabela
         } else {
             console.error("Erro ao atualizar convidado");
