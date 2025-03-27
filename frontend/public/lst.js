@@ -86,9 +86,9 @@ function showEditModalForm(guest) {
     // document.getElementById("editMinorCompanion").value = guest.minor_companion; 
     
     document.querySelectorAll(".contadorEdit").forEach((contadorEdit) => {
-        const editBtnMais = contadorEdit.querySelector(".estiloEditBotaoMenos");
+        const editBtnMais = contadorEdit.querySelector(".estiloEditBotaoMais");
         const editBtnMenos = contadorEdit.querySelector(".estiloEditBotaoMenos");
-        const editInputAcompanhantes = contadorEdit.querySelector(".EditAcompanhantesQtde");
+        const editInputAcompanhantes = contadorEdit.querySelector(".editAcompanhantesQtde");
 
         editBtnMais.addEventListener("click", () => {
             let valorAtual = parseInt(editInputAcompanhantes.textContent, 10);
