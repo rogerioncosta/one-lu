@@ -194,7 +194,7 @@ body{
     display: none;
 }
 
-@media (max-width: 720px){
+@media (max-width: 520px){
 
     .center-align {
         width: 100%;  /* Usa toda a largura disponível */

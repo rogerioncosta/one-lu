@@ -83,12 +83,12 @@ function showEditModalForm(guest) {
     document.getElementById("editUserId").value = guest.id;
     document.getElementById("editName").value = guest.name;
     document.getElementById("editOlderCompanion").value = guest.older_companion;
-    // document.getElementById("editMinorCompanion").value = guest.minor_companion; 
+    document.getElementById("editAcompanhantesQtde").value = guest.minor_companion; 
     
     document.querySelectorAll(".contadorEdit").forEach((contadorEdit) => {
         const editBtnMais = contadorEdit.querySelector(".estiloEditBotaoMais");
         const editBtnMenos = contadorEdit.querySelector(".estiloEditBotaoMenos");
-        const editInputAcompanhantes = contadorEdit.querySelector(".editAcompanhantesQtde");
+        const editInputAcompanhantes = contadorEdit.querySelector(".editMinorCompanion");
 
         editBtnMais.addEventListener("click", () => {
             let valorAtual = parseInt(editInputAcompanhantes.textContent, 10);
@@ -155,7 +155,7 @@ document.getElementById("editForm").addEventListener("submit", async function (e
     const id = document.getElementById("editUserId").value;
     const name = document.getElementById("editName").value.toUpperCase().trim();
     const olderCompanion = document.getElementById("editOlderCompanion").value.toUpperCase().trim();
-    // const minorCompanion = document.getElementById("editMinorCompanion").value.trim();
+    const minorCompanion = document.getElementById("editMinorCompanion").value.trim();
 
     const updatedGuest = {
         name: name,
