@@ -71,7 +71,7 @@ async function fetchGuestList() {
 }
 
 // Função para exibir o formulário de edição com os dados do convidado
-function showEditModalForm(guest) {
+function showEditModalForm(guest) {    
 
     const modalEdit = document.getElementById("modalEdit");
     const closeModalEdit = document.getElementById("closeModalEdit");
@@ -83,7 +83,39 @@ function showEditModalForm(guest) {
     document.getElementById("editUserId").value = guest.id;
     document.getElementById("editName").value = guest.name;
     document.getElementById("editOlderCompanion").value = guest.older_companion;
-    document.getElementById("editMinorCompanion").value = guest.minor_companion;   
+    document.getElementById("editMinorCompanion").value = guest.minor_companion; 
+    
+    document.querySelectorAll(".contadorEdit").forEach((contadorEdit) => {
+        const editBtnMais = contadorEdit.querySelector(".estiloEditBotaoMenos");
+        const editBtnMenos = contadorEdit.querySelector(".estiloEditBotaoMenos");
+        const editInputAcompanhantes = contadorEdit.querySelector(".EditAcompanhantesQtde");
+
+        editBtnMais.addEventListener("click", () => {
+            let valorAtual = parseInt(editInputAcompanhantes.textContent, 10);
+            if (valorAtual < 3) {
+                // inputAcompanhantes.value = valorAtual + 1;
+                valorAtual++;
+                editInputAcompanhantes.textContent = valorAtual;
+            }
+        });
+
+        editBtnMenos.addEventListener("click", () => {
+            let valorAtual = parseInt(editInputAcompanhantes.textContent, 10);
+            if (valorAtual > 0) {
+                // inputAcompanhantes.value = valorAtual - 1;
+                valorAtual--;
+                editInputAcompanhantes.textContent = valorAtual;
+            }
+        });
+    });
+
+    document.getElementById("editName").addEventListener("input", function () {
+        this.value = this.value.toUpperCase();
+    });
+
+    document.getElementById("editOlderCompanion").addEventListener("input", function () {
+        this.value = this.value.toUpperCase();
+    });
     
     // document.getElementById("editFormContainer").style.display = "block";    
 
