@@ -152,12 +152,12 @@ body{
     width: 30px;
 } */
 
-#editName:focus, #editOlderCompanion:focus, #editMinorCompanion:focus{
+#editName:focus, #editOlderCompanion:focus{
     border: 2px solid pink;
     outline: none;
 }
 
-#editName:hover, #editOlderCompanion:hover, #editMinorCompanion:hover{
+#editName:hover, #editOlderCompanion:hover{
     border: 2px solid pink;
 }
 
