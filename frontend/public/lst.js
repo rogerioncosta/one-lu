@@ -86,23 +86,25 @@ function showEditModalForm(guest) {
     document.getElementById("editMinorCompanion").value = guest.minor_companion; 
     
     document.querySelectorAll(".contadorEdit").forEach((contadorEdit) => {
-        const editBtnMais = contadorEdit.querySelector(".estiloEditBotaoMais");
         const editBtnMenos = contadorEdit.querySelector(".estiloEditBotaoMenos");
         const editInputAcompanhantes = contadorEdit.querySelector(".editMinorCompanion");
+        const editBtnMais = contadorEdit.querySelector(".estiloEditBotaoMais");
 
-        editBtnMais.addEventListener("click", () => {
-            let valorAtual = parseInt(editInputAcompanhantes.value, 10);
-            if (valorAtual < 3) {
-                // inputAcompanhantes.value = valorAtual + 1;                
-                editInputAcompanhantes.value = valorAtual + 1;
+        editBtnMenos.addEventListener("click", () => {
+            let valorAtual = parseInt(editInputAcompanhantes.textContent, 10);
+            if (valorAtual > 0) {
+                // inputAcompanhantes.value = valorAtual - 1;
+                valorAtual--;
+                editInputAcompanhantes.textContent = valorAtual;
             }
         });
 
-        editBtnMenos.addEventListener("click", () => {
-            let valorAtual = parseInt(editInputAcompanhantes.value, 10);
-            if (valorAtual > 0) {
-                // inputAcompanhantes.value = valorAtual - 1;
-                editInputAcompanhantes.value = valorAtual + 1;
+        editBtnMais.addEventListener("click", () => {
+            let valorAtual = parseInt(editInputAcompanhantes.textContent, 10);
+            if (valorAtual < 3) {
+                // inputAcompanhantes.value = valorAtual + 1;  
+                valorAtual++;              
+                editInputAcompanhantes.textContent = valorAtual;
             }
         });
     });
