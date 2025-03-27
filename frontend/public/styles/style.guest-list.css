@@ -135,7 +135,7 @@ body{
     
 }
 
-#editName, #editOlderCompanion, #editMinorCompanion {
+#editName, #editOlderCompanion {
     width: 80%;
     height: 30px;   
     border: 2px solid rgb(161, 244, 78);
@@ -157,8 +157,11 @@ body{
     border: 2px solid pink;
 }
 
-#confirmEdit, #cancelEdit {
-   
+#editMinorCompanion {
+    width: 50px;
+}
+
+#confirmEdit, #cancelEdit {   
     margin-top: 10px;
 }
 
@@ -172,10 +175,6 @@ body{
     margin-bottom: 20px;
     justify-content: center;
     gap: 10px; /* Espaço entre os elementos */
-}
-
-.editMinorCompanion {
-    width: 50px;
 }
 
 .close {
