@@ -96,6 +96,7 @@ function showEditModalForm(guest) {
                 // inputAcompanhantes.value = valorAtual - 1;
                 valorAtual--;
                 editInputAcompanhantes.textContent = valorAtual;
+                console.log(valorAtual);
             }
         });
 
@@ -105,6 +106,7 @@ function showEditModalForm(guest) {
                 // inputAcompanhantes.value = valorAtual + 1;  
                 valorAtual++;              
                 editInputAcompanhantes.textContent = valorAtual;
+                console.log(valorAtual);
             }
         });
     });
