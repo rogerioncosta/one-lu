@@ -125,18 +125,21 @@ function showEditModalForm(guest) {
     // Fecha o modal ao clicar no "X"
     closeModalEdit.addEventListener("click", () => {
         modalEdit.classList.add("hidden");
+        window.location.reload();
     });
 
     // Fecha o modal ao clicar fora do conteúdo
     modalEdit.addEventListener("click", (event) => {
         if (event.target === modalEdit) {
             modalEdit.classList.add("hidden");
+            window.location.reload();
         }
     });
 
     // Fecha o modal ao clicar no "cancelar do formulário"
     buttonCancelEdit.addEventListener("click", () => {
         modalEdit.classList.add("hidden");
+        window.location.reload();
     });
 }
 
