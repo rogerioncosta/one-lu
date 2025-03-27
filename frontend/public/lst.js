@@ -121,8 +121,8 @@ document.getElementById("editForm").addEventListener("submit", async function (e
     event.preventDefault(); // Evita recarregar a página
 
     const id = document.getElementById("editUserId").value;
-    const name = document.getElementById("editName").value.trim();
-    const olderCompanion = document.getElementById("editOlderCompanion").value.trim();
+    const name = document.getElementById("editName").value.toUpperCase().trim();
+    const olderCompanion = document.getElementById("editOlderCompanion").value.toUpperCase().trim();
     const minorCompanion = document.getElementById("editMinorCompanion").value.trim();
 
     const updatedGuest = {
