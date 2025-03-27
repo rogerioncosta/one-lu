@@ -159,6 +159,7 @@ body{
 
 #editMinorCompanion {
     width: 30px;
+    text-align: center;
 }
 
 #confirmEdit, #cancelEdit {
