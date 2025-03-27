@@ -83,7 +83,7 @@ function showEditModalForm(guest) {
     document.getElementById("editUserId").value = guest.id;
     document.getElementById("editName").value = guest.name;
     document.getElementById("editOlderCompanion").value = guest.older_companion;
-    document.getElementById("editAcompanhantesQtde").value = guest.minor_companion; 
+    document.getElementById("editMinorCompanion").value = guest.minor_companion; 
     
     document.querySelectorAll(".contadorEdit").forEach((contadorEdit) => {
         const editBtnMais = contadorEdit.querySelector(".estiloEditBotaoMais");
