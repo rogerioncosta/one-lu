@@ -135,7 +135,7 @@ body{
     
 }
 
-#editName, #editOlderCompanion {
+#editName, #editOlderCompanion, #editMinorCompanion {
     width: 80%;
     height: 30px;   
     border: 2px solid rgb(161, 244, 78);
@@ -158,10 +158,11 @@ body{
 }
 
 #editMinorCompanion {
-    width: 50px;
+    width: 30px;
 }
 
-#confirmEdit, #cancelEdit {   
+#confirmEdit, #cancelEdit {
+   
     margin-top: 10px;
 }
 
