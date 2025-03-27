@@ -135,7 +135,7 @@ body{
     
 }
 
-#editName, #editOlderCompanion, #editMinorCompanion {
+#editName, #editOlderCompanion {
     width: 80%;
     height: 30px;   
     border: 2px solid rgb(161, 244, 78);
@@ -147,10 +147,10 @@ body{
     text-align: center;
     background-color: rgb(236, 235, 235);    
 }
-
+/* 
 #editMinorCompanion {
     width: 30px;
-}
+} */
 
 #editName:focus, #editOlderCompanion:focus, #editMinorCompanion:focus{
     border: 2px solid pink;
