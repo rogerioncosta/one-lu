@@ -162,7 +162,7 @@ body{
     margin-top: 10px;
 }
 
-.editContador{
+.contadorEdit{
     /* border: 2px solid pink; */
     display: flex;
     align-items: center;
