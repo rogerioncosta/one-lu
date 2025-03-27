@@ -93,9 +93,8 @@ function showEditModalForm(guest) {
         editBtnMais.addEventListener("click", () => {
             let valorAtual = parseInt(editInputAcompanhantes.value, 10);
             if (valorAtual < 3) {
-                // inputAcompanhantes.value = valorAtual + 1;
-                valorAtual++;
-                editInputAcompanhantes.value = valorAtual;
+                // inputAcompanhantes.value = valorAtual + 1;                
+                editInputAcompanhantes.value = valorAtual + 1;
             }
         });
 
@@ -103,8 +102,7 @@ function showEditModalForm(guest) {
             let valorAtual = parseInt(editInputAcompanhantes.value, 10);
             if (valorAtual > 0) {
                 // inputAcompanhantes.value = valorAtual - 1;
-                valorAtual--;
-                editInputAcompanhantes.value = valorAtual;
+                editInputAcompanhantes.value = valorAtual + 1;
             }
         });
     });
