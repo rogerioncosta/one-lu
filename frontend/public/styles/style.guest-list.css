@@ -182,7 +182,7 @@ body{
     display: none;
 }
 
-@media (max-width: 520px){
+@media (max-width: 720px){
 
     .center-align {
         width: 100%;  /* Usa toda a largura disponível */
@@ -194,6 +194,6 @@ body{
 
     .modalEdit-content {
         width: 80%;
-        height: 55%;
+        height: 65%;
     }
 }
