@@ -91,20 +91,20 @@ function showEditModalForm(guest) {
         const editInputAcompanhantes = contadorEdit.querySelector(".editMinorCompanion");
 
         editBtnMais.addEventListener("click", () => {
-            let valorAtual = parseInt(editInputAcompanhantes.textContent, 10);
+            let valorAtual = parseInt(editInputAcompanhantes.value, 10);
             if (valorAtual < 3) {
                 // inputAcompanhantes.value = valorAtual + 1;
                 valorAtual++;
-                editInputAcompanhantes.textContent = valorAtual;
+                editInputAcompanhantes.value = valorAtual;
             }
         });
 
         editBtnMenos.addEventListener("click", () => {
-            let valorAtual = parseInt(editInputAcompanhantes.textContent, 10);
+            let valorAtual = parseInt(editInputAcompanhantes.value, 10);
             if (valorAtual > 0) {
                 // inputAcompanhantes.value = valorAtual - 1;
                 valorAtual--;
-                editInputAcompanhantes.textContent = valorAtual;
+                editInputAcompanhantes.value = valorAtual;
             }
         });
     });
