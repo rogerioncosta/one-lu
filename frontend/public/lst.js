@@ -84,28 +84,8 @@ function showEditModalForm(guest) {
     document.getElementById("editName").value = guest.name;
     document.getElementById("editOlderCompanion").value = guest.older_companion;
     document.getElementById("editMinorCompanion").textContent = guest.minor_companion; 
-
-    document.body.addEventListener("click", (event) => {
-        if (event.target.classList.contains("estiloEditBotaoMais")) {
-            const editInputAcompanhantes = event.target.closest(".contadorEdit").querySelector(".editMinorCompanion");
-            let valorAtual = parseInt(editInputAcompanhantes.textContent, 10);
-            if (valorAtual < 3) {
-                editInputAcompanhantes.textContent = ++valorAtual;
-                console.log(valorAtual);
-            }
-        }
     
-        if (event.target.classList.contains("estiloEditBotaoMenos")) {
-            const editInputAcompanhantes = event.target.closest(".contadorEdit").querySelector(".editMinorCompanion");
-            let valorAtual = parseInt(editInputAcompanhantes.textContent, 10);
-            if (valorAtual > 0) {
-                editInputAcompanhantes.textContent = --valorAtual;
-                console.log(valorAtual);
-            }
-        }
-    });    
-    
-    /*document.querySelectorAll(".contadorEdit").forEach((contadorEdit) => {
+    document.querySelectorAll(".contadorEdit").forEach((contadorEdit) => {
         const editBtnMenos = contadorEdit.querySelector(".estiloEditBotaoMenos");
         const editInputAcompanhantes = contadorEdit.querySelector(".editMinorCompanion");
         const editBtnMais = contadorEdit.querySelector(".estiloEditBotaoMais");
@@ -129,7 +109,7 @@ function showEditModalForm(guest) {
                 console.log(valorAtual);
             }
         });
-    });*/
+    });
 
     document.getElementById("editName").addEventListener("input", function () {
         this.value = this.value.toUpperCase();
