@@ -91,7 +91,7 @@ function showEditModalForm(guest) {
         const editBtnMais = contadorEdit.querySelector(".estiloEditBotaoMais");
 
         let valorAtual = parseInt(editInputAcompanhantes.textContent, 10);
-        console.log("inicio: ", valorAtual);
+        // console.log("inicio: ", valorAtual);
 
         editBtnMenos.addEventListener("click", () => {
             // let valorAtual = parseInt(editInputAcompanhantes.textContent, 10);
@@ -99,7 +99,7 @@ function showEditModalForm(guest) {
                 // inputAcompanhantes.value = valorAtual - 1;
                 valorAtual--;
                 editInputAcompanhantes.textContent = valorAtual;
-                console.log(valorAtual);
+                // console.log(valorAtual);
             }
         });
 
@@ -109,7 +109,7 @@ function showEditModalForm(guest) {
                 // inputAcompanhantes.value = valorAtual + 1;  
                 valorAtual++;              
                 editInputAcompanhantes.textContent = valorAtual;
-                console.log(valorAtual);
+                // console.log(valorAtual);
             }
         });
     });
@@ -133,7 +133,7 @@ function showEditModalForm(guest) {
     closeModalEdit.addEventListener("click", () => {
         modalEdit.classList.add("hidden");
         valorAtual = 0;
-        console.log(valorAtual);
+        // console.log(valorAtual);
     });
 
     // Fecha o modal ao clicar fora do conteúdo
@@ -141,7 +141,7 @@ function showEditModalForm(guest) {
         if (event.target === modalEdit) {
             modalEdit.classList.add("hidden");
             valorAtual = 0;
-         console.log(valorAtual);
+        //  console.log(valorAtual);
         }
     });
 
@@ -149,7 +149,7 @@ function showEditModalForm(guest) {
     buttonCancelEdit.addEventListener("click", () => {
         modalEdit.classList.add("hidden");
         valorAtual = 0;
-        console.log(valorAtual);
+        // console.log(valorAtual);
     });
 }
 
