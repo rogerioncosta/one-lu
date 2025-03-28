@@ -181,7 +181,7 @@ body{
     touch-action: manipulation;
 }
 
-..estiloEditBotaoMais {
+.estiloEditBotaoMais {
     margin-bottom: 20px;
     touch-action: manipulation;
 }
