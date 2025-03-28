@@ -90,8 +90,10 @@ function showEditModalForm(guest) {
         const editInputAcompanhantes = contadorEdit.querySelector(".editMinorCompanion");
         const editBtnMais = contadorEdit.querySelector(".estiloEditBotaoMais");
 
+        let valorAtual = parseInt(editInputAcompanhantes.textContent, 10);
+
         editBtnMenos.addEventListener("click", () => {
-            let valorAtual = parseInt(editInputAcompanhantes.textContent, 10);
+            // let valorAtual = parseInt(editInputAcompanhantes.textContent, 10);
             if (valorAtual > 0) {
                 // inputAcompanhantes.value = valorAtual - 1;
                 valorAtual--;
@@ -101,7 +103,7 @@ function showEditModalForm(guest) {
         });
 
         editBtnMais.addEventListener("click", () => {
-            let valorAtual = parseInt(editInputAcompanhantes.textContent, 10);
+            // let valorAtual = parseInt(editInputAcompanhantes.textContent, 10);
             if (valorAtual < 3) {
                 // inputAcompanhantes.value = valorAtual + 1;  
                 valorAtual++;              
@@ -129,18 +131,21 @@ function showEditModalForm(guest) {
     // Fecha o modal ao clicar no "X"
     closeModalEdit.addEventListener("click", () => {
         modalEdit.classList.add("hidden");
+        valorAtual = guest.minor_companion;
     });
 
     // Fecha o modal ao clicar fora do conteúdo
     modalEdit.addEventListener("click", (event) => {
         if (event.target === modalEdit) {
             modalEdit.classList.add("hidden");
+            valorAtual = guest.minor_companion;
         }
     });
 
     // Fecha o modal ao clicar no "cancelar do formulário"
     buttonCancelEdit.addEventListener("click", () => {
         modalEdit.classList.add("hidden");
+        valorAtual = guest.minor_companion;
     });
 }
 
