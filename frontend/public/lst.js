@@ -132,6 +132,7 @@ function showEditModalForm(guest) {
     closeModalEdit.addEventListener("click", () => {
         modalEdit.classList.add("hidden");
         valorAtual = 0;
+        console.log(valorAtual);
     });
 
     // Fecha o modal ao clicar fora do conteúdo
@@ -139,6 +140,7 @@ function showEditModalForm(guest) {
         if (event.target === modalEdit) {
             modalEdit.classList.add("hidden");
             valorAtual = 0;
+         console.log(valorAtual);
         }
     });
 
@@ -146,6 +148,7 @@ function showEditModalForm(guest) {
     buttonCancelEdit.addEventListener("click", () => {
         modalEdit.classList.add("hidden");
         valorAtual = 0;
+        console.log(valorAtual);
     });
 }
 
