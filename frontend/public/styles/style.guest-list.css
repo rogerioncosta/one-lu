@@ -177,6 +177,16 @@ body{
     gap: 10px; /* Espaço entre os elementos */
 }
 
+.estiloEditBotaoMenos {
+    touch-action: manipulation;
+}
+
+..estiloEditBotaoMais {
+    margin-bottom: 20px;
+    touch-action: manipulation;
+}
+
+
 .close {
     /* display: none; */
     color: #150213;
