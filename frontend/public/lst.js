@@ -111,6 +111,8 @@ function showEditModalForm(guest) {
                 console.log(valorAtual);
             }
         });
+
+        valorAtual = 0;
     });
 
     document.getElementById("editName").addEventListener("input", function () {
@@ -131,22 +133,18 @@ function showEditModalForm(guest) {
     // Fecha o modal ao clicar no "X"
     closeModalEdit.addEventListener("click", () => {
         modalEdit.classList.add("hidden");
-        valorAtual = guest.minor_companion;
     });
 
     // Fecha o modal ao clicar fora do conteúdo
     modalEdit.addEventListener("click", (event) => {
         if (event.target === modalEdit) {
             modalEdit.classList.add("hidden");
-            valorAtual = guest.minor_companion;
         }
     });
 
     // Fecha o modal ao clicar no "cancelar do formulário"
     buttonCancelEdit.addEventListener("click", () => {
         modalEdit.classList.add("hidden");
-        valorAtual = guest.minor_companion;
-        console.log(valorAtual);
     });
 }
 
