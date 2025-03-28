@@ -91,6 +91,7 @@ function showEditModalForm(guest) {
         const editBtnMais = contadorEdit.querySelector(".estiloEditBotaoMais");
 
         let valorAtual = parseInt(editInputAcompanhantes.textContent, 10);
+        console.log("inicio: ", valorAtual);
 
         editBtnMenos.addEventListener("click", () => {
             // let valorAtual = parseInt(editInputAcompanhantes.textContent, 10);
