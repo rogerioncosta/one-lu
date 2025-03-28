@@ -172,20 +172,14 @@ body{
     display: flex;
     width: 150px;
     margin: 0 auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     justify-content: center;
     gap: 10px; /* Espaço entre os elementos */
 }
 
-.estiloEditBotaoMenos {
+.estiloEditBotaoMenos, .estiloEditBotaoMais {
     touch-action: manipulation;
 }
-
-.estiloEditBotaoMais {
-    margin-bottom: 20px;
-    touch-action: manipulation;
-}
-
 
 .close {
     /* display: none; */
