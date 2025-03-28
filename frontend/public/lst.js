@@ -146,6 +146,7 @@ function showEditModalForm(guest) {
     buttonCancelEdit.addEventListener("click", () => {
         modalEdit.classList.add("hidden");
         valorAtual = guest.minor_companion;
+        console.log(valorAtual);
     });
 }
 
