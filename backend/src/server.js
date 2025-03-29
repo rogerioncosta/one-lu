@@ -8,14 +8,14 @@ const { UserController } = require("./controllers/user.controller");
 const userController = new UserController();
 
 // API Key de segurança
-const API_KEY = process.env.API_KEY; // || 'minha chave local'
+//const API_KEY = process.env.API_KEY; // || 'minha chave local'
 
 const server = http.createServer(async (request, response) => {
 
     // Habilita CORS para a origem 
     response.setHeader("Access-Control-Allow-Origin", "https://one-lu.vercel.app");
     response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE, OPTIONS");
-    response.setHeader("Access-Control-Allow-Headers", "Content-Type, x-api-key");
+    response.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
     // TRATAR OPTIONS (PRE-FLIGHT)
     if (request.method === "OPTIONS") {
@@ -36,7 +36,7 @@ const server = http.createServer(async (request, response) => {
     const URL = request.url;  
 
     // Captura a API Key do cabeçalho
-    const apiKey = request.headers["x-api-key"];
+    // const apiKey = request.headers["x-api-key"];
     
     /*/ Servir arquivos estáticos (CSS e fontes)
     if (URL.startsWith("/styles/") || URL.startsWith("/src/")) {
@@ -90,11 +90,11 @@ const server = http.createServer(async (request, response) => {
         return;
     }*/
 
-     // Bloqueia requisições sem a chave correta
+     /*/ Bloqueia requisições sem a chave correta
      if (!apiKey || apiKey != API_KEY) {
         response.writeHead(403, { "Content-Type": "application/json" });
         return response.end(JSON.stringify({ error: "Acesso negado. API Key inválida." }));
-     }
+     }*/
 
     if(URL.startsWith("/users")) {
         //Cadastrar convidado

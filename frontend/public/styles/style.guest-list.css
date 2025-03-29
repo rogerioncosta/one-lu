@@ -177,6 +177,10 @@ body{
     gap: 10px; /* Espaço entre os elementos */
 }
 
+.editLabelConvidado {
+    text-align: center;
+}
+
 .estiloEditBotaoMenos, .estiloEditBotaoMais {
     touch-action: manipulation;
 }
