@@ -166,7 +166,7 @@ body{
 }
 
 .contadorEdit{
-    /* border: 2px solid pink; */
+    border: 2px solid pink;
     display: flex;
     align-items: center;
     width: 150px;
