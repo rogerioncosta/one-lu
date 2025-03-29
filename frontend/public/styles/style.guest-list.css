@@ -169,7 +169,7 @@ body{
     border: 2px solid pink;
     display: flex;
     align-items: center;
-    /* width: 150px; */
+    width: 100px;
     margin: 0 auto;
     margin-bottom: 5px;
     justify-content: center;
