@@ -172,7 +172,7 @@ body{
     width: 150px;
     margin: 0 auto;
     margin-bottom: 5px;
-    /* justify-content: center; */
+    justify-content: center;
     gap: 10px; /* Espaço entre os elementos */
 }
 
