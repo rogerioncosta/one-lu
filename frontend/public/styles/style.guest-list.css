@@ -123,7 +123,7 @@ body{
     display: inline-block;
 }
 
-.editLabelConvidado, .editLabelConvidadoFilhos {
+.editLabelConvidado {
     margin-left: 80px;
     margin-bottom: 4px;
     font-size: 15px;
@@ -136,6 +136,13 @@ body{
 }
 
 .editLabelConvidadoFilhos {
+    margin-left: 80px;
+    margin-bottom: 4px;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(252, 100, 125);
+    display: block;
+    font-family: "Dancing"; 
     text-align: center;
 }
 
