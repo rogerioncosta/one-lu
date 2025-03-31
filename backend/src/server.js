@@ -27,8 +27,8 @@ const server = http.createServer(async (request, response) => {
     // Verificar a origem da requisição. Não permite acessar o backend pela url ou via postman, insomnia, etc...
     const origin = request.headers["origin"] || request.headers["referer"];
     if (!origin || !origin.startsWith("https://one-lu.vercel.app")) {
-        response.writeHead(403, { "Content-Type": "application/json" });
-        return response.end(JSON.stringify({ error: "Acesso negado. Origem não permitida." }));
+        response.writeHead(403); //, { "Content-Type": "application/json" });
+        return response.end(); //(JSON.stringify({ error: "Acesso negado. Origem não permitida." }));
     }
     
     // Cadastro de convidado
@@ -41,6 +41,12 @@ const server = http.createServer(async (request, response) => {
     // request.url -> Caputar a rota
     const METHOD = request.method;
     const URL = request.url;  
+
+    
+    // Se a URL for "/lst", redireciona para "lst.html"
+    if (URL === "/lst") {
+        URL = "/lst.html";
+    }
 
     // Captura a API Key do cabeçalho
     // const apiKey = request.headers["x-api-key"];
