@@ -49,7 +49,7 @@ const server = http.createServer(async (request, response) => {
     }
 
     // Define o caminho do arquivo na pasta pública (ajuste conforme necessário)
-    const filePath = path.join(__dirname, "public", url);
+    const filePath = path.join(__dirname, "..", "..", "frontend", "public", URL);
 
     // Verifica se o arquivo existe antes de servir
     fs.readFile(filePath, (err, data) => {
