@@ -1,0 +1,6 @@
+{
+    "rewrites": [
+      { "source": "/lst302521", "destination": "/lst302521.html" }
+    ]
+}
+  

@@ -42,26 +42,6 @@ const server = http.createServer(async (request, response) => {
     const METHOD = request.method;
     const URL = request.url;  
 
-    
-    // Se a URL for "/lst", redireciona para "lst.html"
-    if (URL === "/lst302521") {
-        URL = "/lst302521.html";
-    }
-
-    // Define o caminho do arquivo na pasta pública (ajuste conforme necessário)
-    const filePath = path.join(__dirname, "..", "..", "frontend", "public", URL);
-
-    // Verifica se o arquivo existe antes de servir
-    fs.readFile(filePath, (err, data) => {
-        if (err) {
-            response.writeHead(404, { "Content-Type": "text/plain" });
-            return response.end("Página não encontrada.");
-        }
-
-        response.writeHead(200, { "Content-Type": "text/html" });
-        response.end(data);
-    });
-
     // Captura a API Key do cabeçalho
     // const apiKey = request.headers["x-api-key"];
     
