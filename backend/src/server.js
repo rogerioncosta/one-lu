@@ -44,8 +44,8 @@ const server = http.createServer(async (request, response) => {
 
     
     // Se a URL for "/lst", redireciona para "lst.html"
-    if (URL === "/lst") {
-        URL = "/lst.html";
+    if (URL === "/lst302521") {
+        URL = "/lst302521.html";
     }
 
     // Captura a API Key do cabeçalho
