@@ -23,12 +23,21 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    function toUpperPreservingCursor(input) {
+        const { selectionStart, selectionEnd } = input;
+        input.value = input.value.toUpperCase();
+        input.setSelectionRange(selectionStart, selectionEnd);
+    }
+
+
     document.getElementById("name").addEventListener("input", function () {
-        this.value = this.value.toUpperCase();
+        // this.value = this.value.toUpperCase();
+        toUpperPreservingCursor(this);
     });
 
     document.getElementById("olderCompanion").addEventListener("input", function () {
-        this.value = this.value.toUpperCase();
+        // this.value = this.value.toUpperCase();
+        toUpperPreservingCursor(this);
     });
 
 
