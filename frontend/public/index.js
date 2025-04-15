@@ -1,3 +1,5 @@
+import { toUpperPreservingCursor } from "./utils";
+
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".contador").forEach((contador) => {
         const btnMais = contador.querySelector(".estiloBotaoMais");
@@ -23,12 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    function toUpperPreservingCursor(input) {
-        const { selectionStart, selectionEnd } = input;
-        input.value = input.value.toUpperCase();
-        input.setSelectionRange(selectionStart, selectionEnd);
-    }
-
+    // function toUpperPreservingCursor(input) {
+    //     const { selectionStart, selectionEnd } = input;
+    //     input.value = input.value.toUpperCase();
+    //     input.setSelectionRange(selectionStart, selectionEnd);
+    // }
 
     document.getElementById("name").addEventListener("input", function () {
         // this.value = this.value.toUpperCase();
