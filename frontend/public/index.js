@@ -1,4 +1,4 @@
-import { toUpperPreservingCursor } from "./utils";
+import { toUpperPreservingCursor } from "./utils.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".contador").forEach((contador) => {
