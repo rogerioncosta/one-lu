@@ -1,3 +1,5 @@
+import { toUpperPreservingCursor } from "./utils.js";
+
 async function fetchGuestList() {
     // const apiUrlNeon = 'https://neon.tech/users';
     const endpoint = 'https://one-lu-backend.vercel.app/users';
@@ -115,11 +117,13 @@ function showEditModalForm(guest) {
     });
 
     document.getElementById("editName").addEventListener("input", function () {
-        this.value = this.value.toUpperCase();
+        // this.value = this.value.toUpperCase();
+        toUpperPreservingCursor(this);
     });
 
     document.getElementById("editOlderCompanion").addEventListener("input", function () {
-        this.value = this.value.toUpperCase();
+        // this.value = this.value.toUpperCase();
+        toUpperPreservingCursor(this);
     });
     
     // document.getElementById("editFormContainer").style.display = "block";    
