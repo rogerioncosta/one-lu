@@ -21,7 +21,7 @@ class UserRepository {
     }
 
     async findAll() {
-        const { rows } = await this.client.query("SELECT * FROM USERS");
+        const { rows } = await this.client.query("SELECT * FROM USERS ORDER BY NAME");
         return rows;
     }
 
