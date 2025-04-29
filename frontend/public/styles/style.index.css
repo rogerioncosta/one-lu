@@ -34,7 +34,6 @@ body::before {
     z-index: -1; /* Garante que fique atrás do conteúdo */
   }
 
-
 .title{
     margin-top: -40px;
     margin-bottom: 30px;
@@ -58,6 +57,21 @@ body::before {
     height: 850px;      
     text-align: center; 
 }
+
+/* 404 */
+.center-align{
+    /* border: 1px solid black; */
+    margin-top: 50%;
+    text-align: center;    
+}
+
+._404{
+    font-family: "Roboto";
+    font-size: 50px;
+    color: rgba(112, 162, 31, 0.782);    
+  }
+
+  /*****/
 
 #guest_header{
     text-align: center;
