@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Envia os dados para o backend
         try {
-            const response = await fetch("https://one-lu-backend.vercel.app/users", {
+            const response = await fetch("https://one-lu-backend.app/users", { // Url de exemplo
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
