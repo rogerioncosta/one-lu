@@ -1,6 +1,5 @@
 async function fetchGuestList() {
-    // const apiUrlNeon = 'https://neon.tech/users';
-    const endpoint = 'https://one-lu-backend.vercel.app/users';
+    const endpoint = 'https://one-lu-backend.app/users'; // Url de exemplo
 
     try {
         // const response = await fetch(apiUrlNeon);
@@ -105,7 +104,7 @@ document.getElementById("editForm").addEventListener("submit", async function (e
 
 // Função para enviar os dados editados para a API
 async function updateGuest(id, guestData) {
-    const endpoint = `https://one-lu-backend.vercel.app/users/${id}`;
+    const endpoint = `https://one-lu-backend.app/users/${id}`; // Url de exemplo
 
     console.log("URL da requisição PUT:", endpoint);
     console.log("Dados enviados:", JSON.stringify(guestData));
@@ -139,7 +138,7 @@ async function updateGuest(id, guestData) {
 fetchGuestList();
 
 async function deleteUser(id) {
-    const endpoint = `https://one-lu-backend.vercel.app/users/${id}`;
+    const endpoint = `https://one-lu-backend.app/users/${id}`; // Url de exemplo
 
     if (!confirm("Tem certeza que deseja excluir este convidado?")) {
         return;
