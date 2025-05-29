@@ -5,7 +5,7 @@
 ### Front-End
 
 * Java Script puro
-* Css puro
+* Css
 
 ### Back-End
 
