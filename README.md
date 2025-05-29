@@ -11,7 +11,7 @@
 
 * Node Js
 * Http
-* Banco de dados Postegresql
+* Banco de dados PostegreSQL
 
 ![image](https://github.com/user-attachments/assets/111e73fc-7f5d-48a1-9564-80c4e80a2308)
 
